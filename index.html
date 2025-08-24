@@ -88,7 +88,7 @@
                                 <span class="match-tier">Mid Tier Battle</span>
                             </div>
                         </li>
-                        <li class="match-item" data-match-id="iulian-kariz">
+                        <li class="match-item">
                             <div class="match-details">
                                 <span class="match-pair">IULIAN vs KARIZ</span>
                                 <span class="match-result pending">??</span>
@@ -96,15 +96,17 @@
                             <div class="match-extra-info">
                                 <span class="match-tier">High Tier Battle</span>
                             </div>
-                            <div class="voting-section-small">
-                                <div class="voting-options-small">
-                                    <label><input type="radio" name="vote-iulian-kariz" value="iulian"> <span></span> Iulian</label>
-                                    <label><input type="radio" name="vote-iulian-kariz" value="kariz"> <span></span> Kariz</label>
+                            <div class="prediction-section">
+                                <div class="prediction-bar">
+                                    <div class="prediction-fill iulian" style="width: 70%;"></div>
                                 </div>
-                                <a href="vote-sent.html?match=iulian-kariz" class="vote-button-small">Vote</a>
+                                <div class="prediction-labels">
+                                    <span class="prediction-label">Iulian <span class="percentage">70%</span></span>
+                                    <span class="prediction-label">Kariz <span class="percentage">30%</span></span>
+                                </div>
                             </div>
                         </li>
-                        <li class="match-item" data-match-id="ranzt-hiroo">
+                        <li class="match-item">
                             <div class="match-details">
                                 <span class="match-pair">RANZT vs HIROO</span>
                                 <span class="match-result pending">??</span>
@@ -112,15 +114,17 @@
                             <div class="match-extra-info">
                                 <span class="match-tier">High Tier Battle</span>
                             </div>
-                            <div class="voting-section-small">
-                                <div class="voting-options-small">
-                                    <label><input type="radio" name="vote-ranzt-hiroo" value="ranzt"> <span></span> Ranzt</label>
-                                    <label><input type="radio" name="vote-ranzt-hiroo" value="hiroo"> <span></span> Hiroo</label>
+                            <div class="prediction-section">
+                                <div class="prediction-bar">
+                                    <div class="prediction-fill ranzt" style="width: 55%;"></div>
                                 </div>
-                                <a href="vote-sent.html?match=ranzt-hiroo" class="vote-button-small">Vote</a>
+                                <div class="prediction-labels">
+                                    <span class="prediction-label">Ranzt <span class="percentage">55%</span></span>
+                                    <span class="prediction-label">Hiroo <span class="percentage">45%</span></span>
+                                </div>
                             </div>
                         </li>
-                        <li class="match-item" data-match-id="adyy-aheng">
+                        <li class="match-item">
                             <div class="match-details">
                                 <span class="match-pair">ADYY vs AHENG</span>
                                 <span class="match-result pending">??</span>
@@ -128,15 +132,17 @@
                             <div class="match-extra-info">
                                 <span class="match-tier">High Tier Battle</span>
                             </div>
-                            <div class="voting-section-small">
-                                <div class="voting-options-small">
-                                    <label><input type="radio" name="vote-adyy-aheng" value="adyy"> <span></span> Adyy</label>
-                                    <label><input type="radio" name="vote-adyy-aheng" value="aheng"> <span></span> Aheng</label>
+                            <div class="prediction-section">
+                                <div class="prediction-bar">
+                                    <div class="prediction-fill adyy" style="width: 60%;"></div>
                                 </div>
-                                <a href="vote-sent.html?match=adyy-aheng" class="vote-button-small">Vote</a>
+                                <div class="prediction-labels">
+                                    <span class="prediction-label">Adyy <span class="percentage">60%</span></span>
+                                    <span class="prediction-label">Aheng <span class="percentage">40%</span></span>
+                                </div>
                             </div>
                         </li>
-                        <li class="match-item" data-match-id="aaron-hyruki">
+                        <li class="match-item">
                             <div class="match-details">
                                 <span class="match-pair">AARON vs HYRUKI/DEATH END</span>
                                 <span class="match-result pending">??</span>
@@ -144,12 +150,14 @@
                             <div class="match-extra-info">
                                 <span class="match-tier">High Tier Battle</span>
                             </div>
-                            <div class="voting-section-small">
-                                <div class="voting-options-small">
-                                    <label><input type="radio" name="vote-aaron-hyruki" value="aaron"> <span></span> Aaron</label>
-                                    <label><input type="radio" name="vote-aaron-hyruki" value="hyruki"> <span></span> Hyruki/Death End</label>
+                            <div class="prediction-section">
+                                <div class="prediction-bar">
+                                    <div class="prediction-fill aaron" style="width: 50%;"></div>
                                 </div>
-                                <a href="vote-sent.html?match=aaron-hyruki" class="vote-button-small">Vote</a>
+                                <div class="prediction-labels">
+                                    <span class="prediction-label">Aaron <span class="percentage">50%</span></span>
+                                    <span class="prediction-label">Hyruki/Death End <span class="percentage">50%</span></span>
+                                </div>
                             </div>
                         </li>
                     </ul>
@@ -237,25 +245,5 @@
     </footer>
 
     <script src="js/script.js"></script>
-    <script>
-        document.addEventListener('DOMContentLoaded', () => {
-            const votedMatches = JSON.parse(localStorage.getItem('votedMatches')) || [];
-            
-            votedMatches.forEach(matchId => {
-                const matchElement = document.querySelector(`[data-match-id="${matchId}"]`);
-                if (matchElement) {
-                    const resultSpan = matchElement.querySelector('.match-result');
-                    if (resultSpan) {
-                        resultSpan.classList.remove('pending');
-                        resultSpan.textContent = 'Voted';
-                    }
-                    const votingSection = matchElement.querySelector('.voting-section-small');
-                    if (votingSection) {
-                        votingSection.style.display = 'none'; // Hide the voting box
-                    }
-                }
-            });
-        });
-    </script>
 </body>
 </html>
