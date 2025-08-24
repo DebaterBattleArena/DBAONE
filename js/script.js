@@ -45,8 +45,9 @@ document.addEventListener('DOMContentLoaded', () => {
     const mobileNavMenu = document.getElementById('mobileNavMenu');
     const closeNav = document.querySelector('.close-nav');
 
+    // PERBAIKAN: Menggunakan .toggle() agar tombol bisa membuka dan menutup menu
     navToggle.addEventListener('click', () => {
-        mobileNavMenu.classList.add('active');
+        mobileNavMenu.classList.toggle('active');
     });
 
     closeNav.addEventListener('click', () => {
