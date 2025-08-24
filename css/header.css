@@ -113,7 +113,7 @@
     background-color: #a31718;
 }
 
-/* Mobile Navigation Toggle */
+/* Mobile Navigation Toggle (Secara default tersembunyi di desktop) */
 .nav-toggle {
     display: none;
     background: transparent;
@@ -123,9 +123,9 @@
     cursor: pointer;
 }
 
-/* Mobile Navigation Menu */
+/* Mobile Navigation Menu (Secara default tersembunyi di desktop) */
 .mobile-nav-menu {
-    display: none;
+    display: none; /* BARIS INI KUNCI PERBAIKANNYA */
     position: fixed;
     top: 0;
     left: 0;
@@ -214,27 +214,29 @@
     color: var(--text-primary);
 }
 
-/* Media Queries for Header */
+/* Media Queries untuk Header */
 @media (max-width: 768px) {
     .header-content {
         justify-content: flex-start;
     }
 
+    /* Sembunyikan elemen desktop di perangkat mobile */
     .main-nav-desktop, .search-container {
         display: none;
     }
 
+    /* Tampilkan elemen mobile di perangkat mobile */
     .nav-toggle {
         display: block;
+    }
+
+    .mobile-nav-menu {
+        display: flex; /* BARIS INI KUNCI PERBAIKANNYA */
     }
 
     .logo {
         flex-grow: 1;
         text-align: center;
         margin-left: 0;
-    }
-
-    .mobile-nav-menu {
-        display: flex;
     }
 }
