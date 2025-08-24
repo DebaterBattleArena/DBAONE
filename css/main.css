@@ -1,16 +1,147 @@
-/*
- * Main Style Sheet for Debater Battle Arena
- * Imports all module styles and sets global styles
+/* * Main Style Sheet for Debater Battle Arena
+ * Global variables, resets, and core typography
  * --------------------------------------------------------
  */
 
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700;900&display=swap');
 @import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css');
 
-/* Import all style modules */
-@import url('modules/_base.css');
-@import url('modules/_header.css');
-@import url('modules/_footer.css');
-@import url('modules/_home.css');
-@import url('modules/_debaters.css');
-@import url('modules/_profile.css');
+/* CSS Variables for Consistent Styling */
+:root {
+    --bg-dark: #121212;
+    --bg-card: #1e1e1e;
+    --text-primary: #e0e0e0;
+    --text-secondary: #9a9a9a;
+    --color-accent-red: #e51d20;
+    --color-accent-yellow: #f8c300;
+    --color-border: #333333;
+    --font-primary: 'Roboto', sans-serif;
+    --color-win: #4caf50;
+    --color-loss: #f44336;
+    --color-pending: #ffc107;
+    --color-active: #4caf50;
+    --color-inactive: #f44336;
+}
+
+/* Global Box-sizing and Element Resets */
+*, *::before, *::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+/* Base Body and HTML Styles */
+html, body {
+    height: 100%;
+    min-width: 320px;
+}
+
+body {
+    font-family: var(--font-primary);
+    background-color: var(--bg-dark);
+    color: var(--text-primary);
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Main Content Wrapper */
+.main-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+    width: 100%;
+    flex: 1;
+}
+
+/* General Link Styles */
+a {
+    text-decoration: none;
+    color: var(--text-primary);
+    transition: color 0.3s ease-in-out;
+}
+
+a:hover {
+    color: var(--color-accent-red);
+}
+
+/* General Heading Styles */
+h1, h2, h3, h4, h5, h6 {
+    font-weight: 900;
+    text-transform: uppercase;
+}
+
+/* General Section Styles */
+.section {
+    margin-bottom: 50px;
+    padding-top: 20px;
+}
+
+.section-header {
+    border-bottom: 3px solid var(--color-accent-red);
+    padding-bottom: 10px;
+    margin-bottom: 25px;
+}
+
+.section-title {
+    font-size: 2.5rem;
+    color: var(--text-primary);
+}
+
+/* Card Style Base */
+.card {
+    background-color: var(--bg-card);
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+    overflow: hidden;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.5);
+}
+
+/* Utilities */
+.visually-hidden {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    margin: -1px;
+    border: 0;
+    padding: 0;
+    white-space: nowrap;
+    clip-path: inset(100%);
+    clip: rect(0 0 0 0);
+    overflow: hidden;
+}
+
+/* Flex & Grid Layout Helpers */
+.flex-center {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.grid-2-col {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+}
+
+/* Media Queries for Responsive Design */
+@media (max-width: 768px) {
+    .main-content {
+        padding: 15px;
+    }
+
+    .section-title {
+        font-size: 1.8rem;
+    }
+
+    .grid-2-col {
+        grid-template-columns: 1fr;
+    }
+}
