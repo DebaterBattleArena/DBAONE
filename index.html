@@ -238,24 +238,24 @@
 
     <script src="js/script.js"></script>
     <script>
-        // Check for vote status in the URL
-        const urlParams = new URLSearchParams(window.location.search);
-        const votedMatch = urlParams.get('voted');
-        
-        if (votedMatch) {
-            const matchElement = document.querySelector(`[data-match-id="${votedMatch}"]`);
-            if (matchElement) {
-                const resultSpan = matchElement.querySelector('.match-result');
-                if (resultSpan) {
-                    resultSpan.classList.remove('pending');
-                    resultSpan.textContent = 'Voted';
+        document.addEventListener('DOMContentLoaded', () => {
+            const votedMatches = JSON.parse(localStorage.getItem('votedMatches')) || [];
+            
+            votedMatches.forEach(matchId => {
+                const matchElement = document.querySelector(`[data-match-id="${matchId}"]`);
+                if (matchElement) {
+                    const resultSpan = matchElement.querySelector('.match-result');
+                    if (resultSpan) {
+                        resultSpan.classList.remove('pending');
+                        resultSpan.textContent = 'Voted';
+                    }
+                    const votingSection = matchElement.querySelector('.voting-section-small');
+                    if (votingSection) {
+                        votingSection.style.display = 'none'; // Hide the voting box
+                    }
                 }
-                const votingSection = matchElement.querySelector('.voting-section-small');
-                if (votingSection) {
-                    votingSection.style.display = 'none'; // Hide the voting box
-                }
-            }
-        }
+            });
+        });
     </script>
 </body>
 </html>
