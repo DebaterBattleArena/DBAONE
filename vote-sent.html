@@ -87,8 +87,11 @@
         const votedMatch = urlParams.get('match');
         
         if (votedMatch) {
-            const backButton = document.getElementById('back-button');
-            backButton.href = `index.html?voted=${votedMatch}`;
+            let votedMatches = JSON.parse(localStorage.getItem('votedMatches')) || [];
+            if (!votedMatches.includes(votedMatch)) {
+                votedMatches.push(votedMatch);
+                localStorage.setItem('votedMatches', JSON.stringify(votedMatches));
+            }
         }
     </script>
 </body>
