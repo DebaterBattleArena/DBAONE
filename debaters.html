@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Debaters - Debater Battle Arena (DBA)</title>
+    <meta name="description" content="View the full list of debaters from Debater Battle Arena.">
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <link rel="stylesheet" href="css/main.css">
+    
+</head>
+<body>
+
+    <header class="main-header">
+        <div class="header-content">
+            <div class="header-left">
+                <button class="nav-toggle" aria-label="Toggle navigation menu">
+                    <i class="fas fa-bars"></i>
+                </button>
+                <div class="logo">DBA</div>
+            </div>
+            <nav class="main-nav-desktop">
+                <ul>
+                    <li><a href="index.html" class="nav-link">Home</a></li>
+                    <li><a href="archive.html" class="nav-link">Archive</a></li>
+                    <li><a href="ranking.html" class="nav-link">Ranking</a></li>
+                    <li><a href="debaters.html" class="nav-link active">Debaters</a></li>
+                </ul>
+            </nav>
+            <div class="search-container">
+                <input type="text" id="searchInput" class="search-input" placeholder="Search Debaters...">
+                <button id="searchButton" class="search-button" aria-label="Search">
+                    <i class="fas fa-search"></i>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <nav class="mobile-nav-menu" id="mobileNavMenu">
+        <div class="mobile-nav-header">
+            <div class="logo">DBA</div>
+            <button class="close-nav" aria-label="Close navigation menu">
+                <i class="fas fa-times"></i>
+            </button>
+        </div>
+        <div class="search-container-mobile">
+            <input type="text" id="searchInputMobile" class="search-input" placeholder="Search Debaters...">
+            <button id="searchButtonMobile" class="search-button" aria-label="Search">
+                <i class="fas fa-search"></i>
+            </button>
+        </div>
+        <ul class="nav-links-mobile">
+            <li><a href="index.html" class="nav-link-mobile">HOME</a></li>
+            <li><a href="archive.html" class="nav-link-mobile">ARCHIVE</a></li>
+            <li><a href="ranking.html" class="nav-link-mobile">RANKING</a></li>
+            <li><a href="debaters.html" class="nav-link-mobile active">DEBATERS</a></li>
+            <li class="nav-separator"></li>
+            <li><a href="#" class="nav-link-mobile">ABOUT US</a></li>
+            <li><a href="#" class="nav-link-mobile">CONTACT</a></li>
+            <li><a href="#" class="nav-link-mobile">PRIVACY POLICY</a></li>
+        </ul>
+        <div class="social-icons-mobile">
+            <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+            <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+            <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+            <a href="#" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+        </div>
+    </nav>
+
+    <main class="main-content">
+        
+        <section id="debaterListSection" class="section debaters-list-section">
+            <h1 class="section-title">ALL DEBATERS</h1>
+            <div class="debater-continents-grid">
+                <div class="continent-card">
+                    <h2 class="continent-title">ASIAN DEBATERS</h2>
+                    <div class="country-group">
+                        <h3 class="country-title">INDONESIA <span class="flag-icon">🇮🇩</span></h3>
+                        <ul class="debater-items">
+                            <li><a href="#" class="debater-link" data-debater="HIROO">HIROO</a></li>
+                            <li><a href="#" class="debater-link" data-debater="RANZT">RANZT</a></li>
+                            <li><a href="#" class="debater-link" data-debater="ZOGRATIS">ZOGRATIS</a></li>
+                            <li><a href="#" class="debater-link" data-debater="PRATAMA">PRATAMA</a></li>
+                            <li><a href="#" class="debater-link" data-debater="AHENG">AHENG</a></li>
+                            <li><a href="#" class="debater-link" data-debater="ARYANWT">ARYANWT</a></li>
+                            <li><a href="#" class="debater-link" data-debater="THINZEL">THINZEL</a></li>
+                            <li><a href="#" class="debater-link" data-debater="LIANX">LIANX</a></li>
+                            <li><a href="#" class="debater-link" data-debater="VALEN">VALEN</a></li>
+                            <li><a href="#" class="debater-link" data-debater="KUREJI">KUREJI</a></li>
+                            <li><a href="#" class="debater-link" data-debater="KARIZ">KARIZ</a></li>
+                            <li><a href="#" class="debater-link" data-debater="FARRAS">FARRAS</a></li>
+                            <li><a href="#" class="debater-link" data-debater="YULZ CLOVER">YULZ CLOVER</a></li>
+                        </ul>
+                    </div>
+                    <div class="country-group">
+                        <h3 class="country-title">MALAYSIA <span class="flag-icon">🇲🇾</span></h3>
+                        <ul class="debater-items">
+                            <li><a href="#" class="debater-link" data-debater="ADYY">ADYY</a></li>
+                            <li><a href="#" class="debater-link" data-debater="RYUU">RYUU</a></li>
+                            <li><a href="#" class="debater-link" data-debater="MUCHIBEI">MUCHIBEI</a></li>
+                            <li><a href="#" class="debater-link" data-debater="RENJI">RENJI</a></li>
+                            <li><a href="#" class="debater-link" data-debater="RIM">RIM</a></li>
+                            <li><a href="#" class="debater-link" data-debater="SHADE">SHADE</a></li>
+                            <li><a href="#" class="debater-link" data-debater="KYUKI">KYUKI</a></li>
+                        </ul>
+                    </div>
+                    <div class="country-group">
+                        <h3 class="country-title">VIETNAM <span class="flag-icon">🇻🇳</span></h3>
+                        <ul class="debater-items">
+                            <li><a href="#" class="debater-link" data-debater="KLEIN">KLEIN</a></li>
+                        </ul>
+                    </div>
+                    <div class="country-group">
+                        <h3 class="country-title">PHILIPPINES <span class="flag-icon">🇵🇭</span></h3>
+                        <ul class="debater-items">
+                            <li><a href="#" class="debater-link" data-debater="KAZZ">KAZZ</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="continent-card">
+                    <h2 class="continent-title">AMERICAN DEBATERS</h2>
+                    <div class="country-group">
+                        <h3 class="country-title">MEXICO <span class="flag-icon">🇲🇽</span></h3>
+                        <ul class="debater-items">
+                            <li><a href="#" class="debater-link" data-debater="AARON">AARON</a></li>
+                        </ul>
+                    </div>
+                    <div class="country-group">
+                        <h3 class="country-title">BRAZIL <span class="flag-icon">🇧🇷</span></h3>
+                        <ul class="debater-items">
+                            <li><a href="#" class="debater-link" data-debater="XAVIER">XAVIER</a></li>
+                            <li><a href="#" class="debater-link" data-debater="MIKAEL">MIKAEL</a></li>
+                        </ul>
+                    </div>
+                    <div class="country-group">
+                        <h3 class="country-title">CANADA <span class="flag-icon">🇨🇦</span></h3>
+                        <ul class="debater-items">
+                            <li><a href="#" class="debater-link" data-debater="RABBITTO">RABBITTO</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="continent-card">
+                    <h2 class="continent-title">EUROPEAN DEBATERS</h2>
+                    <div class="country-group">
+                        <h3 class="country-title">ITALY <span class="flag-icon">🇮🇹</span></h3>
+                        <ul class="debater-items">
+                            <li><a href="#" class="debater-link" data-debater="HYRUKI">HYRUKI</a></li>
+                        </ul>
+                    </div>
+                    <div class="country-group">
+                        <h3 class="country-title">FRANCE <span class="flag-icon">🇫🇷</span></h3>
+                        <ul class="debater-items">
+                            <li><a href="#" class="debater-link" data-debater="LARNEX">LARNEX</a></li>
+                        </ul>
+                    </div>
+                    <div class="country-group">
+                        <h3 class="country-title">ROMANIA <span class="flag-icon">🇷🇴</span></h3>
+                        <ul class="debater-items">
+                            <li><a href="#" class="debater-link" data-debater="IULIAN">IULIAN</a></li>
+                        </ul>
+                    </div>
+                    <div class="country-group">
+                        <h3 class="country-title">RUSSIA <span class="flag-icon">🇷🇺</span></h3>
+                        <ul class="debater-items">
+                            <li><a href="#" class="debater-link" data-debater="HOMURA KIN">HOMURA KIN</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="debaterProfileSection" class="section profile-section" style="display: none;">
+            <a href="debaters.html" class="back-link"><i class="fas fa-chevron-left"></i> Back to Debater List</a>
+            <div class="profile-card">
+                <div class="profile-header">
+                    <div class="profile-image-wrapper">
+                        <img id="profileImage" src="assets/images/default.jpeg" alt="Debater Profile Image" class="profile-pic">
+                        <span id="profileStatus" class="profile-status"></span>
+                    </div>
+                </div>
+                <div class="profile-info-main">
+                    <h1 class="profile-name" id="profileName"></h1>
+                    <div class="profile-title-badges">
+                        <span class="profile-badge badge-champion">FLYWEIGHT WORLD GRAND PRIX CHAMPION</span>
+                        <span class="profile-badge badge-former-champion">FORMER FLYWEIGHT MMA WORLD CHAMPION</span>
+                    </div>
+                </div>
+                <div class="profile-details-grid">
+                    <div class="profile-detail-item">
+                        <span class="detail-label">Country</span>
+                        <p class="detail-value" id="profileCountry"></p>
+                    </div>
+                    <div class="profile-detail-item">
+                        <span class="detail-label">Record (W-L-D)</span>
+                        <p class="detail-value" id="profileRecord"></p>
+                    </div>
+                    <div class="profile-detail-item">
+                        <span class="detail-label">Age</span>
+                        <p class="detail-value" id="profileAge"></p>
+                    </div>
+                    <div class="profile-detail-item">
+                        <span class="detail-label">Team</span>
+                        <p class="detail-value" id="profileTeam"></p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="match-history-card">
+                <h3 class="history-title">MATCH HISTORY</h3>
+                <ul id="matchHistory" class="history-list">
+                    </ul>
+            </div>
+            
+        </section>
+        
+        <footer class="main-footer">
+            <div class="footer-content">
+                <div class="footer-logo">DBA</div>
+                <nav class="footer-nav">
+                    <ul>
+                        <li><a href="#">Privacy Policy</a></li>
+                        <li><a href="#">Terms of Use</a></li>
+                        <li><a href="#">Contact Us</a></li>
+                    </ul>
+                </nav>
+                <div class="footer-social">
+                    <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                    <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                    <a href="#" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+                </div>
+            </div>
+            <div class="copyright">
+                <p>&copy; 2025 Debater Battle Arena. All Rights Reserved.</p>
+            </div>
+        </footer>
+
+    </main>
+
+    <script src="js/script.js"></script>
+</body>
+</html>
