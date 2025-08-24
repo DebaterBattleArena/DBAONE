@@ -1,0 +1,83 @@
+/*
+ * Footer Styles for Debater Battle Arena
+ * --------------------------------------------------------
+ */
+
+.main-footer {
+    background-color: var(--bg-card);
+    padding: 30px 20px;
+    border-top: 2px solid var(--color-border);
+    margin-top: 50px;
+}
+
+.footer-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.footer-logo {
+    font-weight: 900;
+    font-size: 1.8rem;
+    color: var(--color-accent-red);
+}
+
+.footer-nav ul {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.footer-nav a {
+    font-weight: 400;
+    font-size: 0.9rem;
+    color: var(--text-secondary);
+    transition: color 0.3s ease;
+}
+
+.footer-nav a:hover {
+    color: var(--text-primary);
+}
+
+.footer-social {
+    display: flex;
+    gap: 15px;
+}
+
+.footer-social a {
+    font-size: 1.2rem;
+    color: var(--text-secondary);
+    transition: color 0.3s ease;
+}
+
+.footer-social a:hover {
+    color: var(--text-primary);
+}
+
+.copyright {
+    text-align: center;
+    margin-top: 20px;
+    padding-top: 15px;
+    border-top: 1px solid var(--color-border);
+}
+
+.copyright p {
+    font-size: 0.8rem;
+    color: var(--text-secondary);
+}
+
+@media (max-width: 768px) {
+    .footer-content {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .footer-nav ul {
+        justify-content: center;
+    }
+}
