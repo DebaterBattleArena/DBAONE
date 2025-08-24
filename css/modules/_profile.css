@@ -1,0 +1,113 @@
+/*
+ * Profile View Specific Styles
+ * Match History Section
+ * --------------------------------------------------------
+ */
+
+/* Match History Card */
+.match-history-card {
+    background-color: var(--bg-card);
+    border-radius: 8px;
+    padding: 25px;
+    box-shadow: var(--card-shadow);
+    margin-top: 20px;
+}
+
+.history-title {
+    font-weight: 900;
+    font-size: 1.5rem;
+    color: var(--text-primary);
+    border-bottom: 2px solid var(--color-border);
+    padding-bottom: 10px;
+    margin-bottom: 15px;
+    text-transform: uppercase;
+}
+
+.history-list {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.history-item {
+    background-color: #2a2a2a;
+    padding: 15px;
+    border-radius: 5px;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    transition: background-color var(--transition-fast), transform 0.2s ease;
+}
+
+.history-item:hover {
+    background-color: #333;
+    transform: translateX(5px);
+}
+
+.match-debater-image {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 2px solid #fff;
+    flex-shrink: 0;
+}
+
+.history-content {
+    flex-grow: 1;
+}
+
+.history-event-name {
+    font-size: 0.9rem;
+    color: var(--text-secondary);
+    text-transform: uppercase;
+}
+
+.history-match-details {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-top: 5px;
+}
+
+.history-result-badge {
+    font-weight: 700;
+    font-size: 0.9rem;
+    padding: 5px 10px;
+    border-radius: 5px;
+    text-transform: uppercase;
+}
+
+.history-result-badge.win {
+    background-color: var(--color-win);
+    color: #fff;
+}
+
+.history-result-badge.loss {
+    background-color: var(--color-loss);
+    color: #fff;
+}
+
+.history-opponent {
+    font-weight: 700;
+    font-size: 1rem;
+    color: var(--text-primary);
+}
+
+.history-date {
+    font-size: 0.8rem;
+    color: var(--text-secondary);
+    margin-left: auto;
+    text-align: right;
+    flex-shrink: 0;
+}
+
+.history-item.no-history {
+    background-color: transparent;
+    border: 1px dashed var(--color-border);
+    justify-content: center;
+    text-align: center;
+    color: var(--text-secondary);
+    padding: 20px;
+}
