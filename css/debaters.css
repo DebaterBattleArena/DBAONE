@@ -1,0 +1,233 @@
+/*
+ * Debaters Page Specific Styles for Debater Battle Arena
+ * Debater List and Profile View
+ * --------------------------------------------------------
+ */
+
+/* Debater List Section */
+.debaters-list-section {
+    margin-top: 30px;
+}
+
+.debater-continents-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.continent-card {
+    background-color: var(--bg-card);
+    padding: 25px;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+    flex-grow: 1;
+}
+
+.continent-title {
+    font-weight: 900;
+    font-size: 1.8rem;
+    color: var(--text-primary);
+    border-bottom: 2px solid var(--color-border);
+    padding-bottom: 10px;
+    margin-bottom: 20px;
+    text-transform: uppercase;
+}
+
+.country-group {
+    margin-bottom: 25px;
+}
+
+.country-title {
+    font-weight: 700;
+    font-size: 1.2rem;
+    color: var(--color-accent-red);
+    margin-bottom: 10px;
+}
+
+.debater-items {
+    list-style: none;
+}
+
+.debater-items li {
+    padding: 10px 0;
+    border-bottom: 1px solid #3d3d3d;
+    transition: background-color 0.3s ease;
+}
+
+.debater-items li:last-child {
+    border-bottom: none;
+}
+
+.debater-items li:hover {
+    background-color: #2a2a2a;
+}
+
+.debater-link {
+    font-weight: 400;
+    font-size: 1.1rem;
+    display: block;
+    padding-left: 10px;
+}
+
+.debater-link.inactive {
+    color: #777;
+}
+
+/* Debater Profile Section */
+.profile-section {
+    margin-top: 30px;
+}
+
+.back-link {
+    color: var(--text-secondary);
+    font-weight: 700;
+    font-size: 0.9rem;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    margin-bottom: 20px;
+}
+
+.profile-card {
+    background-color: var(--bg-card);
+    border-radius: 8px;
+    padding: 30px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+}
+
+.profile-header {
+    display: flex;
+    align-items: center;
+    gap: 30px;
+    margin-bottom: 20px;
+    border-bottom: 2px solid var(--color-border);
+    padding-bottom: 20px;
+}
+
+.profile-image-wrapper {
+    position: relative;
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    overflow: hidden;
+    border: 3px solid var(--color-accent-red);
+    flex-shrink: 0;
+}
+
+.profile-pic {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.profile-status {
+    position: absolute;
+    bottom: 5px;
+    left: 50%;
+    transform: translateX(-50%);
+    color: #fff;
+    font-weight: 700;
+    padding: 4px 12px;
+    border-radius: 20px;
+    font-size: 0.8rem;
+    text-transform: uppercase;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.profile-status.active {
+    background-color: var(--color-active);
+}
+
+.profile-status.inactive {
+    background-color: var(--color-inactive);
+}
+
+.profile-info-main {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.profile-name {
+    font-weight: 900;
+    font-size: 2.5rem;
+    color: var(--text-primary);
+    text-transform: uppercase;
+}
+
+.profile-country-flag {
+    font-size: 1.2rem;
+}
+
+.profile-details-container {
+    display: flex;
+    gap: 20px;
+    margin-bottom: 30px;
+}
+
+.profile-detail-item {
+    flex-grow: 1;
+    background-color: #2a2a2a;
+    padding: 15px;
+    border-left: 3px solid var(--color-accent-red);
+    border-radius: 5px;
+}
+
+.detail-label {
+    display: block;
+    font-size: 0.8rem;
+    color: var(--text-secondary);
+    margin-bottom: 5px;
+    text-transform: uppercase;
+}
+
+.detail-value {
+    font-weight: 700;
+    font-size: 1.1rem;
+    margin-bottom: 0;
+}
+
+.match-history-card {
+    background-color: var(--bg-card);
+    border-radius: 8px;
+    padding: 25px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+}
+
+.history-title {
+    font-weight: 900;
+    font-size: 1.5rem;
+    color: var(--text-primary);
+    border-bottom: 2px solid var(--color-border);
+    padding-bottom: 10px;
+    margin-bottom: 15px;
+    text-transform: uppercase;
+}
+
+.history-list {
+    list-style: none;
+}
+
+.history-list li {
+    background-color: #2a2a2a;
+    padding: 12px 15px;
+    border-radius: 5px;
+    margin-bottom: 8px;
+    font-size: 1rem;
+}
+
+/* Media Queries for Debaters Page */
+@media (max-width: 768px) {
+    .debater-continents-grid {
+        flex-direction: column;
+    }
+
+    .profile-header {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .profile-details-container {
+        flex-direction: column;
+    }
+}
