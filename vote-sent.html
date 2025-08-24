@@ -1,9 +1,9 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="id">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Vote Sent - DBA</title>
+    <title>Vote Terkirim - DBA</title>
     <link rel="stylesheet" href="css/main.css">
     <link rel="stylesheet" href="css/header.css">
     <link rel="stylesheet" href="css/footer.css">
@@ -54,9 +54,9 @@
 
     <main class="main-content">
         <div class="confirmation-page">
-            <h1>Thank You!</h1>
-            <p>Your vote has been successfully submitted.</p>
-            <a href="index.html" class="back-button">Back to Homepage</a>
+            <h1>Terima Kasih!</h1>
+            <p>Vote Anda telah berhasil direkam.</p>
+            <a href="index.html" id="back-button" class="back-button">Kembali ke Beranda</a>
         </div>
     </main>
 
@@ -82,5 +82,14 @@
         </div>
     </footer>
 
+    <script>
+        const urlParams = new URLSearchParams(window.location.search);
+        const votedMatch = urlParams.get('match');
+        
+        if (votedMatch) {
+            const backButton = document.getElementById('back-button');
+            backButton.href = `index.html?voted=${votedMatch}`;
+        }
+    </script>
 </body>
 </html>
