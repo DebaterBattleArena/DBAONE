@@ -150,76 +150,43 @@
     color: #bbb;
 }
 
-/* Voting section for ongoing matches */
-.voting-section-small {
+/* Prediction section */
+.prediction-section {
     margin-top: 10px;
     display: flex;
     flex-direction: column;
-    align-items: center;
     width: 100%;
     padding-top: 10px;
     border-top: 1px solid #444;
 }
 
-.voting-options-small {
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
+.prediction-bar {
     width: 100%;
-}
-
-.voting-options-small label {
-    font-size: 0.9rem;
-    color: #f0f0f0;
-    background-color: #444;
-    padding: 8px 12px;
-    border-radius: 6px;
-    cursor: pointer;
-    transition: background-color 0.3s, transform 0.2s;
-    display: flex;
-    align-items: center;
-    gap: 8px;
-}
-
-.voting-options-small label:hover {
+    height: 10px;
     background-color: #555;
-    transform: translateY(-2px);
+    border-radius: 5px;
+    overflow: hidden;
+    margin-bottom: 8px;
 }
 
-.voting-options-small input[type="radio"] {
-    display: none;
-}
-
-.voting-options-small input[type="radio"] + span {
-    display: inline-block;
-    width: 16px;
-    height: 16px;
-    border-radius: 50%;
-    border: 2px solid #ffcc00;
-    background-color: #242424;
-    transition: background-color 0.3s;
-}
-
-.voting-options-small input[type="radio"]:checked + span {
+.prediction-fill {
+    height: 100%;
     background-color: #ffcc00;
 }
 
-.vote-button-small {
-    background-color: #ffcc00;
-    color: #111;
-    border: none;
-    padding: 8px 16px;
-    font-size: 0.9rem;
+.prediction-labels {
+    display: flex;
+    justify-content: space-between;
+    font-size: 0.8rem;
+    color: #f0f0f0;
+}
+
+.prediction-label {
     font-weight: bold;
-    border-radius: 4px;
-    cursor: pointer;
-    margin-top: 10px;
-    transition: background-color 0.3s;
-    width: 100%;
 }
 
-.vote-button-small:hover {
-    background-color: #e6b800;
+.prediction-label .percentage {
+    color: #ffcc00;
 }
 
 /* Comments Section */
@@ -285,11 +252,4 @@
 
 .comment-text {
     color: #f0f0f0;
-}
-
-/* Responsive styles */
-@media (max-width: 768px) {
-    .event-grid {
-        grid-template-columns: 1fr;
-    }
 }
