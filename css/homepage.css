@@ -1,4 +1,4 @@
-/* ---- GENERAL SECTION STYLING ---- */
+/* Styling for sections */
 .on-going-event,
 .upcoming-events,
 .past-events {
@@ -22,74 +22,109 @@
     font-weight: 700;
 }
 
-.subtitle {
-    font-size: 1.1em;
-    color: #aaa;
-    margin: 5px 0;
-}
-
-/* ---- NEW MAIN FIGHT CARD STYLING ---- */
-.main-fight-card {
-    background-color: #242424;
-    padding: 20px;
-    margin-bottom: 20px;
-    border-radius: 10px;
-    text-align: center;
-}
-
-.fight-title {
-    font-size: 1.2em;
-    font-weight: bold;
-    color: #ffcc00;
-    margin-bottom: 20px;
-    text-transform: uppercase;
-    letter-spacing: 1px;
-}
-
-.fighters-container {
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-    flex-wrap: wrap;
-}
-
-.fighter-card {
+/* On-going event card */
+.event-card-large {
     display: flex;
     flex-direction: column;
     align-items: center;
-    width: 45%;
     text-align: center;
+    background-color: #242424;
+    padding: 1rem;
+    border-radius: 8px;
 }
 
-.fighter-photo {
+.card-image-wrapper {
     width: 100%;
-    max-width: 200px;
+    margin-bottom: 1rem;
+}
+
+.event-poster {
+    max-width: 100%;
     height: auto;
-    border-radius: 5px;
-    border: 2px solid #555;
+    display: block;
+    border-radius: 8px;
 }
 
-.fighter-name {
-    font-size: 1.4em;
-    font-weight: bold;
-    color: #fff;
-    margin-top: 10px;
+.card-content-wrapper {
+    width: 100%;
 }
 
-.fighter-country {
-    font-size: 0.9em;
-    color: #aaa;
-    margin-top: 5px;
+.event-title-main {
+    font-size: 1.25rem;
+    font-weight: 900;
+    color: #ffcc00;
+    margin-bottom: 1rem;
 }
 
-.vs-text {
-    font-size: 1.5em;
+/* Gaya untuk daftar pertandingan secara keseluruhan */
+.match-list {
+    list-style: none;
+    padding: 0;
+    margin: 20px 0;
+    display: flex;
+    flex-direction: column;
+    gap: 10px; /* Memberi jarak antar setiap kartu */
+}
+
+/* Gaya untuk setiap kartu pertandingan */
+.match-item {
+    background-color: #2b2b2b; /* Warna latar belakang kartu yang lebih gelap */
+    padding: 15px;
+    border-radius: 10px; /* Sudut membulat */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Efek bayangan untuk kesan 3D */
+    transition: transform 0.2s ease-in-out; /* Transisi saat dihover */
+}
+
+.match-item:hover {
+    transform: translateY(-3px); /* Kartu sedikit terangkat saat dihover */
+}
+
+/* Gaya untuk detail pertandingan (nama dan tier) */
+.match-details {
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+    flex-grow: 1;
+}
+
+.match-pair {
+    font-size: 1.1em; /* Ukuran font lebih besar untuk nama pemain */
+    font-weight: 700; /* Tebal */
+    color: #ffffff; /* Warna teks putih */
+    margin-bottom: 5px;
+}
+
+.match-tier {
+    font-size: 0.9em; /* Ukuran font lebih kecil untuk tier */
+    color: #aaaaaa; /* Warna abu-abu yang lebih lembut */
+}
+
+/* Gaya untuk tombol hasil pertandingan */
+.match-result {
+    padding: 8px 15px;
+    border-radius: 20px;
     font-weight: 700;
-    color: #aaa;
-    margin: 0 10px;
+    font-size: 0.9em;
+    color: #1a1a1a;
+    text-transform: uppercase;
+    text-align: center;
+    white-space: nowrap;
 }
 
-/* ---- UPCOMING EVENTS GRID ---- */
+/* Warna untuk hasil kemenangan */
+.match-result.win {
+    background-color: #4CAF50; /* Hijau */
+}
+
+/* Warna untuk hasil yang belum ditentukan */
+.match-result.pending {
+    background-color: #FFC107; /* Kuning */
+}
+
+/* Upcoming events grid */
 .event-grid {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
@@ -105,12 +140,6 @@
     background-color: #242424;
     padding: 1rem;
     border-radius: 8px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-    transition: transform 0.2s ease-in-out;
-}
-
-.upcoming-event-card:hover {
-    transform: translateY(-5px);
 }
 
 .upcoming-poster {
