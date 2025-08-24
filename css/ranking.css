@@ -1,10 +1,8 @@
 /* General ranking page styles */
 .ranking-section {
     padding: 2rem;
-    background-color: #1a1a1a;
-    border-radius: 8px;
-    margin-bottom: 2rem;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    background-color: #0d0d0d;
+    min-height: 100vh;
 }
 
 .section-header {
@@ -19,13 +17,13 @@
     display: block;
     width: 60px;
     height: 3px;
-    background-color: #ffcc00;
+    background-color: var(--color-accent-yellow);
     margin: 0 auto;
     margin-top: 10px;
 }
 
 .section-title {
-    color: #f0f0f0;
+    color: var(--text-primary);
     font-size: 2.5rem;
     font-weight: 900;
     text-transform: uppercase;
@@ -40,73 +38,133 @@
 }
 
 .division-card {
-    background-color: #242424;
-    border-radius: 8px;
-    padding: 20px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+    background-color: #1a1a1a;
+    border-radius: 12px;
+    padding: 25px;
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.4);
+    border: 1px solid #333;
 }
 
 .division-title {
-    color: #ffcc00;
-    font-size: 1.5rem;
+    color: var(--color-accent-yellow);
+    font-size: 1.8rem;
     font-weight: 700;
     text-transform: uppercase;
-    margin-bottom: 15px;
+    margin-bottom: 20px;
     border-bottom: 2px solid #333;
-    padding-bottom: 10px;
+    padding-bottom: 15px;
 }
 
-.ranking-table {
-    width: 100%;
-    border-collapse: collapse;
-    background-color: #2a2a2a;
-    color: #f0f0f0;
-    font-size: 1rem;
-    text-align: left;
+.ranking-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
 }
 
-.ranking-table th,
-.ranking-table td {
-    padding: 12px 15px;
-    border-bottom: 1px solid #3e3e3e;
+.ranking-item {
+    display: flex;
+    align-items: center;
+    background-color: #242424;
+    padding: 15px 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    border: 1px solid #333;
 }
 
-.ranking-table thead {
-    background-color: #333;
-    color: #ffcc00;
+.ranking-item:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
 }
 
-.ranking-table tbody tr:hover {
-    background-color: #2e2e2e;
-}
-
-.ranking-table td a {
-    color: #f0f0f0;
-    text-decoration: none;
-    font-weight: 700;
-    transition: color 0.2s ease-in-out;
-}
-
-.ranking-table td a:hover {
-    color: #ffcc00;
-}
-
-.ranking-table .champion {
-    background-color: #4CAF50;
-    color: #fff;
+.rank-number, .rank-label {
+    font-size: 2.5rem;
     font-weight: 900;
+    color: var(--color-accent-red);
+    width: 60px;
+    text-align: left;
+    flex-shrink: 0;
 }
 
-.ranking-table .champion a {
-    color: #fff;
+.rank-label {
+    font-size: 0.9rem;
+    color: var(--color-accent-yellow);
+    text-transform: uppercase;
+    width: 120px;
+    text-align: center;
 }
 
-.ranking-table .champion td:first-child {
-    font-weight: bold;
+.ranking-item.champion {
+    background-color: #3e3e3e;
+    border: 2px solid var(--color-accent-yellow);
 }
 
+.debater-info {
+    display: flex;
+    align-items: center;
+    flex-grow: 1;
+    gap: 15px;
+}
+
+.debater-avatar {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 2px solid #555;
+    flex-shrink: 0;
+}
+
+.debater-name {
+    font-size: 1.2rem;
+    font-weight: 700;
+    color: var(--text-primary);
+    text-decoration: none;
+}
+
+.debater-name:hover {
+    color: var(--color-accent-yellow);
+}
+
+.debater-record {
+    font-size: 1.1rem;
+    color: var(--text-secondary);
+    font-weight: 700;
+    text-align: right;
+    flex-shrink: 0;
+    width: 80px;
+}
+
+/* Responsiveness for mobile devices */
 @media (max-width: 768px) {
-    .ranking-table {
-        font-size: 0.9rem;
+    .ranking-item {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 10px;
+    }
+
+    .rank-number, .rank-label {
+        font-size: 2rem;
+        width: 100%;
+        text-align: left;
+    }
+
+    .rank-label {
+        font-size: 0.8rem;
+        text-align: left;
+    }
+
+    .debater-info {
+        flex-direction: row;
+        width: 100%;
+    }
+
+    .debater-record {
+        width: 100%;
+        text-align: left;
+        margin-top: -10px; /* Adjust spacing */
     }
 }
