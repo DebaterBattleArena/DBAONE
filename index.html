@@ -88,7 +88,7 @@
                                 <span class="match-tier">Mid Tier Battle</span>
                             </div>
                         </li>
-                        <li class="match-item">
+                        <li class="match-item" data-match-id="iulian-kariz">
                             <div class="match-details">
                                 <span class="match-pair">IULIAN vs KARIZ</span>
                                 <span class="match-result pending">??</span>
@@ -101,10 +101,10 @@
                                     <label><input type="radio" name="vote-iulian-kariz" value="iulian"> <span></span> Iulian</label>
                                     <label><input type="radio" name="vote-iulian-kariz" value="kariz"> <span></span> Kariz</label>
                                 </div>
-                                <a href="vote-sent.html" class="vote-button-small">Vote</a>
+                                <a href="vote-sent.html?match=iulian-kariz" class="vote-button-small">Vote</a>
                             </div>
                         </li>
-                        <li class="match-item">
+                        <li class="match-item" data-match-id="ranzt-hiroo">
                             <div class="match-details">
                                 <span class="match-pair">RANZT vs HIROO</span>
                                 <span class="match-result pending">??</span>
@@ -117,10 +117,10 @@
                                     <label><input type="radio" name="vote-ranzt-hiroo" value="ranzt"> <span></span> Ranzt</label>
                                     <label><input type="radio" name="vote-ranzt-hiroo" value="hiroo"> <span></span> Hiroo</label>
                                 </div>
-                                <a href="vote-sent.html" class="vote-button-small">Vote</a>
+                                <a href="vote-sent.html?match=ranzt-hiroo" class="vote-button-small">Vote</a>
                             </div>
                         </li>
-                        <li class="match-item">
+                        <li class="match-item" data-match-id="adyy-aheng">
                             <div class="match-details">
                                 <span class="match-pair">ADYY vs AHENG</span>
                                 <span class="match-result pending">??</span>
@@ -133,10 +133,10 @@
                                     <label><input type="radio" name="vote-adyy-aheng" value="adyy"> <span></span> Adyy</label>
                                     <label><input type="radio" name="vote-adyy-aheng" value="aheng"> <span></span> Aheng</label>
                                 </div>
-                                <a href="vote-sent.html" class="vote-button-small">Vote</a>
+                                <a href="vote-sent.html?match=adyy-aheng" class="vote-button-small">Vote</a>
                             </div>
                         </li>
-                        <li class="match-item">
+                        <li class="match-item" data-match-id="aaron-hyruki">
                             <div class="match-details">
                                 <span class="match-pair">AARON vs HYRUKI/DEATH END</span>
                                 <span class="match-result pending">??</span>
@@ -149,7 +149,7 @@
                                     <label><input type="radio" name="vote-aaron-hyruki" value="aaron"> <span></span> Aaron</label>
                                     <label><input type="radio" name="vote-aaron-hyruki" value="hyruki"> <span></span> Hyruki/Death End</label>
                                 </div>
-                                <a href="vote-sent.html" class="vote-button-small">Vote</a>
+                                <a href="vote-sent.html?match=aaron-hyruki" class="vote-button-small">Vote</a>
                             </div>
                         </li>
                     </ul>
@@ -237,5 +237,25 @@
     </footer>
 
     <script src="js/script.js"></script>
+    <script>
+        // Check for vote status in the URL
+        const urlParams = new URLSearchParams(window.location.search);
+        const votedMatch = urlParams.get('voted');
+        
+        if (votedMatch) {
+            const matchElement = document.querySelector(`[data-match-id="${votedMatch}"]`);
+            if (matchElement) {
+                const resultSpan = matchElement.querySelector('.match-result');
+                if (resultSpan) {
+                    resultSpan.classList.remove('pending');
+                    resultSpan.textContent = 'Voted';
+                }
+                const votingSection = matchElement.querySelector('.voting-section-small');
+                if (votingSection) {
+                    votingSection.style.display = 'none'; // Hide the voting box
+                }
+            }
+        }
+    </script>
 </body>
 </html>
