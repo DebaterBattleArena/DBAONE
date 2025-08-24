@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ranking - Debater Battle Arena (DBA)</title>
+    <title>Ranking Debater - DBA</title>
     <link rel="stylesheet" href="css/main.css">
     <link rel="stylesheet" href="css/header.css">
     <link rel="stylesheet" href="css/footer.css">
@@ -38,40 +38,66 @@
         </div>
     </header>
 
-    <nav class="mobile-nav-menu" id="mobileNavMenu">
-        <div class="mobile-nav-header">
-            <div class="logo">DBA</div>
-            <button class="close-nav" aria-label="Close navigation menu">
-                <i class="fas fa-times"></i>
-            </button>
-        </div>
-        <div class="search-container-mobile">
-            <input type="text" id="searchInputMobile" class="search-input" placeholder="Search Debaters...">
-            <button id="searchButtonMobile" class="search-button" aria-label="Search">
-                    <i class="fas fa-search"></i>
-                </button>
-        </div>
-        <ul class="nav-links-mobile">
-            <li><a href="index.html" class="nav-link-mobile">HOME</a></li>
-            <li><a href="archive.html" class="nav-link-mobile">ARCHIVE</a></li>
-            <li><a href="ranking.html" class="nav-link-mobile">RANKING</a></li>
-            <li><a href="debaters.html" class="nav-link-mobile">DEBATERS</a></li>
-        </ul>
-        <div class="social-icons-mobile">
-            <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
-            <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
-            <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
-            <a href="#" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
-        </div>
-    </nav>
-
     <main class="main-content">
-        <section class="section ranking-content">
+        <section class="ranking-section">
             <div class="section-header">
-                <h1 class="section-title">DEBATER RANKING</h1>
+                <h2 class="section-title">DEBATER RANKING</h2>
             </div>
-            <p>Ini adalah halaman peringkat. Anda bisa menambahkan daftar debater beserta peringkatnya di sini.</p>
-            </section>
+            <table class="ranking-table">
+                <thead>
+                    <tr>
+                        <th>#</th>
+                        <th>Debater</th>
+                        <th>Win</th>
+                        <th>Loss</th>
+                        <th>Draw</th>
+                        <th>Total Poin</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr class="top-debater">
+                        <td>1</td>
+                        <td><a href="#">Yulz Clover</a></td>
+                        <td>12</td>
+                        <td>3</td>
+                        <td>1</td>
+                        <td>370</td>
+                    </tr>
+                    <tr>
+                        <td>2</td>
+                        <td><a href="#">Kazz</a></td>
+                        <td>10</td>
+                        <td>4</td>
+                        <td>0</td>
+                        <td>300</td>
+                    </tr>
+                    <tr>
+                        <td>3</td>
+                        <td><a href="#">Iulian</a></td>
+                        <td>9</td>
+                        <td>2</td>
+                        <td>1</td>
+                        <td>280</td>
+                    </tr>
+                    <tr>
+                        <td>4</td>
+                        <td><a href="#">Ranzt</a></td>
+                        <td>8</td>
+                        <td>5</td>
+                        <td>0</td>
+                        <td>240</td>
+                    </tr>
+                    <tr>
+                        <td>5</td>
+                        <td><a href="#">Hiroo</a></td>
+                        <td>7</td>
+                        <td>3</td>
+                        <td>0</td>
+                        <td>210</td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
     </main>
 
     <footer class="main-footer">
