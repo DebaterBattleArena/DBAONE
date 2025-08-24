@@ -1,0 +1,72 @@
+body {
+    background-color: #000;
+    color: #f0f0f0;
+    font-family: 'Roboto', sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+}
+
+.confirmation-container {
+    text-align: center;
+    padding: 2rem;
+}
+
+.confirmation-box {
+    background-color: #1a1a1a;
+    padding: 3rem 2rem;
+    border-radius: 12px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.4);
+    border: 1px solid #333;
+}
+
+.confirmation-icon {
+    font-size: 4rem;
+    color: #28a745;
+    margin-bottom: 1rem;
+}
+
+.confirmation-title {
+    font-size: 2.5rem;
+    font-weight: 900;
+    color: #f0f0f0;
+    margin-bottom: 1rem;
+}
+
+.confirmation-message {
+    font-size: 1.2rem;
+    color: #aaa;
+    margin-bottom: 2rem;
+}
+
+.back-link {
+    display: inline-block;
+    padding: 0.75rem 2rem;
+    background-color: #ffcc00;
+    color: #111;
+    text-decoration: none;
+    font-weight: bold;
+    border-radius: 4px;
+    transition: background-color 0.3s ease;
+}
+
+.back-link:hover {
+    background-color: #e6b800;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .confirmation-box {
+        padding: 2rem 1rem;
+    }
+    
+    .confirmation-title {
+        font-size: 2rem;
+    }
+    
+    .confirmation-message {
+        font-size: 1rem;
+    }
+}
