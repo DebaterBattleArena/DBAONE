@@ -126,7 +126,7 @@
     border-radius: 8px;
     overflow: hidden;
     position: relative;
-    height: 100px; /* Adjust height as needed */
+    height: 100px;
     transition: transform 0.2s, box-shadow 0.2s;
     background-color: #333;
 }
