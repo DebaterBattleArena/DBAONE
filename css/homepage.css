@@ -31,6 +31,10 @@
 }
 
 /* On-going event section */
+.on-going-event {
+    margin-bottom: 2rem;
+}
+
 .event-card-large {
     background-color: #242424;
     border-radius: 12px;
@@ -115,6 +119,7 @@
     margin-bottom: 1rem;
 }
 
+/* Prediction section styling */
 .prediction-section {
     display: flex;
     gap: 1rem;
