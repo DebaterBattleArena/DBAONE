@@ -1,197 +1,160 @@
-/* Styling for sections */
-.on-going-event,
-.upcoming-events,
-.past-events,
-.comments-section {
+/* Styling for the main content area */
+.main-content {
+    /* REMOVED: max-width and margin from main.css to allow for full width */
     padding: 2rem;
-    background-color: #1a1a1a;
-    border-radius: 8px;
-    margin-bottom: 2rem;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
 
 .section-header {
-    border-bottom: 2px solid #555;
-    margin-bottom: 1rem;
-    padding-bottom: 0.5rem;
     text-align: center;
+    margin-bottom: 2rem;
+    position: relative;
+    padding-bottom: 10px;
+}
+
+.section-header::after {
+    content: '';
+    display: block;
+    width: 60px;
+    height: 3px;
+    background-color: #ffcc00;
+    margin: 0 auto;
+    margin-top: 10px;
 }
 
 .section-title {
     color: #f0f0f0;
-    font-size: 1.5rem;
-    font-weight: 700;
+    font-size: 2.5rem;
+    font-weight: 900;
+    text-transform: uppercase;
+    letter-spacing: 2px;
 }
 
-/* On-going event card */
+/* On-going event section */
+.on-going-event {
+    margin-bottom: 2rem;
+}
+
 .event-card-large {
+    background-color: #242424;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.4);
     display: flex;
     flex-direction: column;
-    align-items: center;
-    text-align: center;
-    background-color: #242424;
-    padding: 1rem;
-    border-radius: 8px;
 }
 
 .card-image-wrapper {
     width: 100%;
-    margin-bottom: 1rem;
+    height: auto;
 }
 
 .event-poster {
-    max-width: 100%;
+    width: 100%;
     height: auto;
     display: block;
-    border-radius: 8px;
 }
 
 .card-content-wrapper {
-    width: 100%;
+    padding: 1.5rem;
 }
 
 .event-title-main {
-    font-size: 1.25rem;
-    font-weight: 900;
+    font-size: 2rem;
     color: #ffcc00;
-    margin-bottom: 1rem;
+    margin-bottom: 1.5rem;
+    text-transform: uppercase;
+    text-align: center;
 }
 
 .match-list {
     list-style: none;
     padding: 0;
     margin: 0;
-}
-
-.match-item {
-    background-color: #333;
-    color: #f0f0f0;
-    padding: 10px;
-    border-radius: 6px;
-    margin-bottom: 10px;
     display: flex;
     flex-direction: column;
-    align-items: flex-start;
-}
-
-.match-details {
-    width: 100%;
-    font-size: 1rem;
-    font-weight: 700;
-    color: #ddd;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
-
-.match-pair {
-    flex-grow: 1;
-}
-
-.match-result {
-    font-size: 0.9rem;
-    font-weight: 900;
-    padding: 2px 8px;
-    border-radius: 4px;
-    color: #111;
-}
-
-.match-result.win {
-    background-color: #4CAF50;
-}
-
-.match-result.pending {
-    background-color: #FFC107;
-}
-
-.match-extra-info {
-    font-size: 0.8rem;
-    color: #bbb;
-    margin-top: 5px;
-}
-
-/* Upcoming events grid */
-.event-grid {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
     gap: 1rem;
 }
 
-/* New YouTube-style card */
-.upcoming-event-card-youtube {
+.match-item {
+    background-color: #1a1a1a;
+    border-radius: 8px;
+    padding: 1rem;
     display: flex;
     flex-direction: column;
-    text-decoration: none;
-    background-color: #242424;
-    border-radius: 8px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
-    transition: transform 0.2s, box-shadow 0.2s;
-    overflow: hidden;
 }
 
-.upcoming-event-card-youtube:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+.match-details {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 0.5rem;
 }
 
-.upcoming-poster-youtube {
-    width: 100%;
-    height: auto;
-    display: block;
-    border-radius: 8px 8px 0 0;
-}
-
-.upcoming-details-youtube {
-    padding: 0.75rem;
-    text-align: left;
-}
-
-.upcoming-title-youtube {
-    font-size: 0.9rem;
+.match-pair {
+    font-weight: bold;
     color: #f0f0f0;
-    font-weight: 700;
-    margin: 0 0 0.25rem 0;
 }
 
-.upcoming-date-youtube {
-    font-size: 0.75rem;
-    color: #bbb;
-    display: block;
+.match-result {
+    font-weight: bold;
+    padding: 0.25rem 0.75rem;
+    border-radius: 4px;
+    text-transform: uppercase;
 }
 
-/* Prediction section */
+.match-result.win {
+    background-color: #28a745;
+    color: #fff;
+}
+
+.match-result.pending {
+    background-color: #ffcc00;
+    color: #111;
+}
+
+.match-extra-info {
+    font-size: 0.9rem;
+    color: #aaa;
+    margin-bottom: 1rem;
+}
+
+/* Prediction section styling */
 .prediction-section {
     display: flex;
-    flex-direction: column;
-    width: 100%;
-    gap: 10px;
-    margin-top: 10px;
+    gap: 1rem;
 }
 
 .prediction-option {
-    position: relative;
-    background-color: #444;
+    flex: 1;
+    cursor: pointer;
     border-radius: 8px;
     overflow: hidden;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
+    position: relative;
+    height: 100px;
+    transition: transform 0.2s, box-shadow 0.2s;
+    background-color: #333;
 }
 
 .prediction-option:hover {
-    background-color: #555;
-}
-
-.prediction-option.not-voted {
-    background-color: #333;
-    cursor: default;
+    transform: translateY(-5px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
 }
 
 .prediction-content {
-    display: flex;
-    align-items: center;
-    padding: 10px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
     z-index: 2;
-    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 1rem;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
+    color: #fff;
+    background: rgba(0, 0, 0, 0.5);
 }
 
 .debater-image {
@@ -199,49 +162,103 @@
     height: 50px;
     border-radius: 50%;
     object-fit: cover;
-    margin-right: 15px;
+    margin-bottom: 0.5rem;
+    border: 2px solid #ffcc00;
 }
 
 .debater-name {
-    flex-grow: 1;
-    font-size: 1rem;
     font-weight: bold;
-    color: #f0f0f0;
 }
 
 .percentage {
-    font-size: 1rem;
-    font-weight: bold;
-    color: #ffcc00;
+    font-size: 1.2rem;
+    font-weight: 900;
+    margin-top: 0.5rem;
 }
 
 .prediction-fill {
     position: absolute;
-    top: 0;
+    bottom: 0;
     left: 0;
     height: 100%;
-    background-color: #666; /* Warna default sebelum divote */
+    background-color: #ffcc00;
+    transition: width 0.5s ease-in-out;
     z-index: 1;
-    transition: width 0.5s ease;
 }
 
-/* New CSS for Voted state */
+/* Prediction states */
+.prediction-option.voted {
+    box-shadow: 0 0 10px #ffcc00;
+    transform: none;
+    border: 2px solid #ffcc00;
+}
+
 .prediction-option.voted .prediction-fill {
-    background-color: #007BFF; /* Biru setelah divote */
-    transition: width 0.5s ease, background-color 0.5s ease;
+    width: 100% !important;
 }
 
-.prediction-option.voted .percentage {
-    color: #fff;
-    transition: color 0.5s ease;
-}
-
-.prediction-option.not-voted .prediction-fill {
+.prediction-option.not-voted .prediction-content {
     opacity: 0.5;
+}
+
+/* Upcoming events section */
+.upcoming-events {
+    /* REMOVED: max-width and margin to allow for full width */
+    padding: 2rem;
+    background-color: #1a1a1a;
+    border-radius: 8px;
+    margin-bottom: 2rem;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.event-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 1.5rem;
+}
+
+.upcoming-event-card-youtube {
+    background-color: #242424;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    text-decoration: none;
+    color: inherit;
+    transition: transform 0.2s;
+    display: block;
+}
+
+.upcoming-event-card-youtube:hover {
+    transform: translateY(-5px);
+}
+
+.upcoming-poster-youtube {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+.upcoming-details-youtube {
+    padding: 1rem;
+    text-align: center;
+}
+
+.upcoming-title-youtube {
+    color: #f0f0f0;
+    font-size: 1.1rem;
+    margin: 0;
+}
+
+.upcoming-date-youtube {
+    color: #aaa;
+    font-size: 0.9rem;
+    margin-top: 0.5rem;
+    display: block;
 }
 
 /* Comments Section */
 .comments-section {
+    /* REMOVED: max-width and margin to allow for full width */
     padding: 2rem;
     background-color: #1a1a1a;
     border-radius: 8px;
@@ -295,6 +312,19 @@
     border-radius: 8px;
 }
 
+.comment-avatar {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background-size: cover;
+    background-position: center;
+    flex-shrink: 0;
+}
+
+.comment-content {
+    flex-grow: 1;
+}
+
 .comment-author {
     font-weight: bold;
     color: #ffcc00;
@@ -305,9 +335,47 @@
     color: #f0f0f0;
 }
 
-/* Media queries for responsiveness */
-@media (max-width: 600px) {
-    .event-grid {
-        grid-template-columns: 1fr;
+/* Responsiveness */
+@media (max-width: 768px) {
+    .main-content {
+        padding: 1rem;
+    }
+
+    .section-title {
+        font-size: 2rem;
+    }
+
+    .event-card-large {
+        flex-direction: column;
+    }
+
+    .card-content-wrapper {
+        padding: 1rem;
+    }
+
+    .event-title-main {
+        font-size: 1.5rem;
+    }
+
+    .match-item {
+        padding: 0.75rem;
+    }
+
+    .prediction-section {
+        flex-direction: column;
+        gap: 0.5rem;
+    }
+
+    .prediction-option {
+        height: 80px;
+    }
+
+    .debater-image {
+        width: 40px;
+        height: 40px;
+    }
+
+    .upcoming-events, .comments-section {
+        padding: 1rem;
     }
 }
