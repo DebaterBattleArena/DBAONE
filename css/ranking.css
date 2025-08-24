@@ -8,6 +8,8 @@
     --color-accent-yellow: #ffcc00;
     --color-accent-red: #ff3333;
     --color-border: #333333;
+    --one-gold: #fcc201; /* Warna emas khas ONE */
+    --one-dark: #121212; /* Warna latar belakang gelap khas ONE */
 }
 
 body {
@@ -30,7 +32,7 @@ body {
     display: block;
     width: 60px;
     height: 3px;
-    background-color: var(--color-accent-yellow);
+    background-color: var(--one-gold);
     margin: 0 auto;
     margin-top: 10px;
 }
@@ -59,7 +61,7 @@ body {
 }
 
 .division-title {
-    color: var(--color-accent-yellow);
+    color: var(--one-gold);
     font-size: 1.6rem;
     font-weight: 700;
     text-transform: uppercase;
@@ -77,6 +79,9 @@ body {
     gap: 10px;
 }
 
+/* --- Perubahan untuk tampilan ONE --- */
+
+/* Gaya untuk semua item ranking (termasuk juara) */
 .ranking-item {
     display: flex;
     align-items: center;
@@ -93,28 +98,21 @@ body {
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
 }
 
-.rank-number, .rank-label {
-    font-size: 1.8rem;
-    font-weight: 900;
-    color: var(--color-accent-red);
-    width: 35px; /* Adjust width to make it more compact */
-    text-align: center;
-    flex-shrink: 0;
+/* Gaya khusus untuk item King Division */
+.ranking-item.one-champion {
+    background-color: var(--one-dark);
+    border: 2px solid var(--one-gold);
+    box-shadow: 0 5px 15px rgba(252, 194, 1, 0.2);
+    padding: 15px 20px; /* Ukuran padding yang sedikit lebih besar */
 }
 
-.rank-label {
-    font-size: 0.8rem;
-    color: var(--color-accent-yellow);
-    text-transform: uppercase;
-    width: 90px;
-    text-align: center;
+/* Gaya khusus saat di-hover */
+.ranking-item.one-champion:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 20px rgba(252, 194, 1, 0.3);
 }
 
-.ranking-item.champion {
-    background-color: #3e3e3e;
-    border: 2px solid var(--color-accent-yellow);
-}
-
+/* Teks dan logo di dalam item juara */
 .debater-info {
     display: flex;
     align-items: center;
@@ -122,6 +120,7 @@ body {
     gap: 10px;
 }
 
+/* Gaya untuk avatar */
 .debater-avatar {
     width: 45px;
     height: 45px;
@@ -131,17 +130,45 @@ body {
     flex-shrink: 0;
 }
 
+/* Gaya untuk nama debater */
 .debater-name {
     font-size: 1rem;
     font-weight: 700;
     color: var(--text-primary);
     text-decoration: none;
+    flex-grow: 1; /* Mengisi ruang yang tersedia */
+}
+
+/* Gaya khusus nama debater pada item King Division */
+.ranking-item.one-champion .debater-name {
+    font-size: 1.1rem;
+    color: var(--one-gold);
 }
 
 .debater-name:hover {
     color: var(--color-accent-yellow);
 }
 
+/* Label juara (misalnya "KING DIVISION") */
+.champion-label {
+    font-size: 0.9rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    color: var(--one-gold);
+    letter-spacing: 0.5px;
+    margin-left: 15px;
+    white-space: nowrap;
+}
+
+/* Tampilan mahkota */
+.debater-crown {
+    width: 24px;
+    height: 24px;
+    fill: var(--one-gold);
+    margin-right: 10px;
+}
+
+/* Gaya untuk rekor (Win-Loss) */
 .debater-record {
     font-size: 0.9rem;
     color: var(--text-secondary);
@@ -151,64 +178,22 @@ body {
     width: 50px;
 }
 
-/* --- ADDED FOR KING DIVISION --- */
-
-/* Styling for the King Division item */
-.king-item {
-    background-color: var(--color-accent-yellow);
-    border: 2px solid var(--color-accent-yellow);
-    border-radius: 12px;
-    padding: 20px;
-    box-shadow: 0 8px 15px rgba(255, 204, 0, 0.4);
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    transition: transform 0.2s ease, box-shadow 0.2s ease;
-    cursor: pointer;
+/* Gaya rekor di item juara */
+.ranking-item.one-champion .debater-record {
+    color: var(--one-gold);
 }
 
-.king-item:hover {
-    transform: translateY(-4px);
-    box-shadow: 0 10px 20px rgba(255, 204, 0, 0.5);
-}
-
-.king-item .debater-info {
-    flex-grow: 1;
-}
-
-.king-item .debater-info .debater-name,
-.king-item .debater-info .debater-record {
-    color: var(--bg-dark); /* Mengubah warna teks menjadi gelap */
-}
-
-/* New class for the King Division label */
-.rank-king-label {
-    font-size: 1.2rem;
-    font-weight: 900;
-    color: var(--bg-dark);
-    text-transform: uppercase;
-    text-align: left;
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    line-height: 1;
-    margin-right: 15px;
-}
-
-.rank-king-label .label-main {
+/* Gaya untuk nomor peringkat dan label lainnya */
+.rank-number {
     font-size: 1.8rem;
-    color: var(--bg-dark);
     font-weight: 900;
+    color: var(--color-accent-red);
+    width: 35px;
+    text-align: center;
+    flex-shrink: 0;
 }
 
-.rank-king-label .label-sub {
-    font-size: 0.9rem;
-    color: var(--bg-dark);
-    font-weight: 700;
-    margin-top: 5px;
-}
-
-/* --- END OF ADDED CSS --- */
+/* --- Akhir perubahan untuk tampilan ONE --- */
 
 /* Responsive adjustments */
 @media (max-width: 600px) {
