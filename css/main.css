@@ -1,4 +1,5 @@
-/* * Main Style Sheet for Debater Battle Arena
+/*
+ * Main Style Sheet for Debater Battle Arena
  * Global variables, resets, and core typography
  * --------------------------------------------------------
  */
@@ -49,10 +50,9 @@ body {
 
 /* Main Content Wrapper */
 .main-content {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 20px;
+    /* Menghapus max-width dan margin agar konten bisa full-screen */
     width: 100%;
+    padding: 20px;
     flex: 1;
 }
 
