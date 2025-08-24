@@ -29,18 +29,6 @@
             font-size: 1.2rem;
             margin-bottom: 2rem;
         }
-        .back-button {
-            background-color: #4CAF50;
-            color: white;
-            padding: 12px 24px;
-            text-decoration: none;
-            border-radius: 8px;
-            font-weight: bold;
-            transition: background-color 0.3s;
-        }
-        .back-button:hover {
-            background-color: #45a049;
-        }
     </style>
 </head>
 <body>
@@ -56,7 +44,7 @@
         <div class="confirmation-page">
             <h1>Terima Kasih!</h1>
             <p>Vote Anda telah berhasil direkam.</p>
-            <a href="index.html" id="back-button" class="back-button">Kembali ke Beranda</a>
+            <p>Anda akan diarahkan kembali ke halaman utama dalam 3 detik...</p>
         </div>
     </main>
 
@@ -93,6 +81,11 @@
                 localStorage.setItem('votedMatches', JSON.stringify(votedMatches));
             }
         }
+        
+        setTimeout(() => {
+            window.location.href = 'index.html';
+        }, 3000);
     </script>
 </body>
 </html>
+
