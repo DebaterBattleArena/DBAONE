@@ -148,3 +148,10 @@
     font-size: 0.75rem;
     color: #bbb;
 }
+.event-poster {
+    max-width: 100%;
+    height: 200px; /* Atur tinggi yang tetap, sesuaikan jika perlu */
+    object-fit: cover; /* Properti ini memastikan gambar mengisi area tanpa terdistorsi */
+    display: block;
+    border-radius: 8px;
+}
