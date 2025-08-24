@@ -1,6 +1,7 @@
 /* Styling for the main content area */
 .main-content {
-    /* REMOVED: max-width and margin from main.css to allow for full width */
+    max-width: 1200px;
+    margin: 0 auto;
     padding: 2rem;
 }
 
@@ -203,7 +204,6 @@
 
 /* Upcoming events section */
 .upcoming-events {
-    /* REMOVED: max-width and margin to allow for full width */
     padding: 2rem;
     background-color: #1a1a1a;
     border-radius: 8px;
@@ -258,7 +258,6 @@
 
 /* Comments Section */
 .comments-section {
-    /* REMOVED: max-width and margin to allow for full width */
     padding: 2rem;
     background-color: #1a1a1a;
     border-radius: 8px;
@@ -310,6 +309,9 @@
     background-color: #242424;
     padding: 1rem;
     border-radius: 8px;
+    display: flex;
+    align-items: flex-start;
+    gap: 15px;
 }
 
 .comment-avatar {
