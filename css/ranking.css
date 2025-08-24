@@ -151,6 +151,65 @@ body {
     width: 50px;
 }
 
+/* --- ADDED FOR KING DIVISION --- */
+
+/* Styling for the King Division item */
+.king-item {
+    background-color: var(--color-accent-yellow);
+    border: 2px solid var(--color-accent-yellow);
+    border-radius: 12px;
+    padding: 20px;
+    box-shadow: 0 8px 15px rgba(255, 204, 0, 0.4);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    cursor: pointer;
+}
+
+.king-item:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 10px 20px rgba(255, 204, 0, 0.5);
+}
+
+.king-item .debater-info {
+    flex-grow: 1;
+}
+
+.king-item .debater-info .debater-name,
+.king-item .debater-info .debater-record {
+    color: var(--bg-dark); /* Mengubah warna teks menjadi gelap */
+}
+
+/* New class for the King Division label */
+.rank-king-label {
+    font-size: 1.2rem;
+    font-weight: 900;
+    color: var(--bg-dark);
+    text-transform: uppercase;
+    text-align: left;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    line-height: 1;
+    margin-right: 15px;
+}
+
+.rank-king-label .label-main {
+    font-size: 1.8rem;
+    color: var(--bg-dark);
+    font-weight: 900;
+}
+
+.rank-king-label .label-sub {
+    font-size: 0.9rem;
+    color: var(--bg-dark);
+    font-weight: 700;
+    margin-top: 5px;
+}
+
+/* --- END OF ADDED CSS --- */
+
 /* Responsive adjustments */
 @media (max-width: 600px) {
     .ranking-section {
