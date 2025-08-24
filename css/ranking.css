@@ -1,7 +1,21 @@
 /* General ranking page styles */
+:root {
+    --text-primary: #f0f0f0;
+    --text-secondary: #aaaaaa;
+    --bg-dark: #0d0d0d;
+    --bg-card: #1a1a1a;
+    --bg-card-light: #242424;
+    --color-accent-yellow: #ffcc00;
+    --color-accent-red: #ff3333;
+    --color-border: #333333;
+}
+
+body {
+    background-color: var(--bg-dark);
+}
+
 .ranking-section {
-    padding: 2rem;
-    background-color: #0d0d0d;
+    padding: 2rem 1rem;
     min-height: 100vh;
 }
 
@@ -9,7 +23,6 @@
     text-align: center;
     margin-bottom: 2rem;
     position: relative;
-    padding-bottom: 10px;
 }
 
 .section-header::after {
@@ -24,7 +37,7 @@
 
 .section-title {
     color: var(--text-primary);
-    font-size: 2.5rem;
+    font-size: 2.2rem;
     font-weight: 900;
     text-transform: uppercase;
     letter-spacing: 2px;
@@ -34,25 +47,25 @@
 .ranking-division-container {
     display: flex;
     flex-direction: column;
-    gap: 30px;
+    gap: 20px;
 }
 
 .division-card {
-    background-color: #1a1a1a;
+    background-color: var(--bg-card);
     border-radius: 12px;
-    padding: 25px;
-    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.4);
-    border: 1px solid #333;
+    padding: 20px;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.4);
+    border: 1px solid var(--color-border);
 }
 
 .division-title {
     color: var(--color-accent-yellow);
-    font-size: 1.8rem;
+    font-size: 1.6rem;
     font-weight: 700;
     text-transform: uppercase;
-    margin-bottom: 20px;
-    border-bottom: 2px solid #333;
-    padding-bottom: 15px;
+    margin-bottom: 15px;
+    border-bottom: 2px solid var(--color-border);
+    padding-bottom: 10px;
 }
 
 .ranking-list {
@@ -61,39 +74,39 @@
     margin: 0;
     display: flex;
     flex-direction: column;
-    gap: 15px;
+    gap: 10px;
 }
 
 .ranking-item {
     display: flex;
     align-items: center;
-    background-color: #242424;
-    padding: 15px 20px;
+    background-color: var(--bg-card-light);
+    padding: 10px 15px;
     border-radius: 8px;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
     transition: transform 0.2s ease, box-shadow 0.2s ease;
-    border: 1px solid #333;
+    border: 1px solid #2e2e2e;
 }
 
 .ranking-item:hover {
-    transform: translateY(-3px);
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
 }
 
 .rank-number, .rank-label {
-    font-size: 2.5rem;
+    font-size: 1.8rem;
     font-weight: 900;
     color: var(--color-accent-red);
-    width: 60px;
-    text-align: left;
+    width: 35px; /* Adjust width to make it more compact */
+    text-align: center;
     flex-shrink: 0;
 }
 
 .rank-label {
-    font-size: 0.9rem;
+    font-size: 0.8rem;
     color: var(--color-accent-yellow);
     text-transform: uppercase;
-    width: 120px;
+    width: 90px;
     text-align: center;
 }
 
@@ -106,20 +119,20 @@
     display: flex;
     align-items: center;
     flex-grow: 1;
-    gap: 15px;
+    gap: 10px;
 }
 
 .debater-avatar {
-    width: 60px;
-    height: 60px;
+    width: 45px;
+    height: 45px;
     border-radius: 50%;
     object-fit: cover;
-    border: 2px solid #555;
+    border: 1px solid #555;
     flex-shrink: 0;
 }
 
 .debater-name {
-    font-size: 1.2rem;
+    font-size: 1rem;
     font-weight: 700;
     color: var(--text-primary);
     text-decoration: none;
@@ -130,41 +143,51 @@
 }
 
 .debater-record {
-    font-size: 1.1rem;
+    font-size: 0.9rem;
     color: var(--text-secondary);
     font-weight: 700;
     text-align: right;
     flex-shrink: 0;
-    width: 80px;
+    width: 50px;
 }
 
-/* Responsiveness for mobile devices */
-@media (max-width: 768px) {
+/* Responsive adjustments */
+@media (max-width: 600px) {
+    .ranking-section {
+        padding: 1rem 0.5rem;
+    }
+    
+    .division-card {
+        padding: 15px;
+    }
+
+    .section-title {
+        font-size: 1.8rem;
+    }
+
+    .division-title {
+        font-size: 1.4rem;
+    }
+
     .ranking-item {
-        flex-direction: column;
-        align-items: flex-start;
-        gap: 10px;
+        padding: 8px 10px;
     }
 
     .rank-number, .rank-label {
-        font-size: 2rem;
-        width: 100%;
-        text-align: left;
+        font-size: 1.5rem;
+        width: 30px;
+    }
+    
+    .debater-avatar {
+        width: 40px;
+        height: 40px;
     }
 
-    .rank-label {
-        font-size: 0.8rem;
-        text-align: left;
-    }
-
-    .debater-info {
-        flex-direction: row;
-        width: 100%;
+    .debater-name {
+        font-size: 0.9rem;
     }
 
     .debater-record {
-        width: 100%;
-        text-align: left;
-        margin-top: -10px; /* Adjust spacing */
+        font-size: 0.8rem;
     }
 }
