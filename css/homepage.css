@@ -1,193 +1,230 @@
-<!DOCTYPE html>
-<html lang="id">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Debater Battle Arena (DBA)</title>
-    
-    <link rel="stylesheet" href="css/main.css">
-    <link rel="stylesheet" href="css/header.css">
-    <link rel="stylesheet" href="css/footer.css">
-    <link rel="stylesheet" href="css/homepage.css">
+/* Styling for sections */
+.on-going-event,
+.upcoming-events,
+.past-events {
+    padding: 2rem;
+    background-color: #1a1a1a;
+    border-radius: 8px;
+    margin-bottom: 2rem;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
 
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700;900&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-</head>
-<body>
+.section-header {
+    border-bottom: 2px solid #555;
+    margin-bottom: 1rem;
+    padding-bottom: 0.5rem;
+    text-align: center;
+}
 
-    <header class="main-header">
-        <div class="header-content">
-            <div class="header-left">
-                <button class="nav-toggle" aria-label="Toggle navigation menu">
-                    <i class="fas fa-bars"></i>
-                </button>
-                <div class="logo">DBA</div>
-            </div>
-            <nav class="main-nav-desktop">
-                <ul>
-                    <li><a href="index.html" class="nav-link">Home</a></li>
-                    <li><a href="archive.html" class="nav-link">Archive</a></li>
-                    <li><a href="ranking.html" class="nav-link">Ranking</a></li>
-                    <li><a href="debaters.html" class="nav-link">Debaters</a></li>
-                </ul>
-            </nav>
-            <div class="search-container">
-                <input type="text" id="searchInput" class="search-input" placeholder="Search Debaters...">
-                <button id="searchButton" class="search-button" aria-label="Search">
-                    <i class="fas fa-search"></i>
-                </button>
-            </div>
-        </div>
-    </header>
+.section-title {
+    color: #f0f0f0;
+    font-size: 1.5rem;
+    font-weight: 700;
+}
 
-    <nav class="mobile-nav-menu" id="mobileNavMenu">
-        <div class="mobile-nav-header">
-            <div class="logo">DBA</div>
-            <button class="close-nav" aria-label="Close navigation menu">
-                <i class="fas fa-times"></i>
-            </button>
-        </div>
-        <div class="search-container-mobile">
-            <input type="text" id="searchInputMobile" class="search-input" placeholder="Search Debaters...">
-            <button id="searchButtonMobile" class="search-button" aria-label="Search">
-                <i class="fas fa-search"></i>
-            </button>
-        </div>
-        <ul class="nav-links-mobile">
-            <li><a href="index.html" class="nav-link-mobile">HOME</a></li>
-            <li><a href="archive.html" class="nav-link-mobile">ARCHIVE</a></li>
-            <li><a href="ranking.html" class="nav-link-mobile">RANKING</a></li>
-            <li><a href="debaters.html" class="nav-link-mobile">DEBATERS</a></li>
-        </ul>
-        <div class="social-icons-mobile">
-            <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
-            <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
-            <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
-            <a href="#" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
-        </div>
-    </nav>
+/* On-going event card */
+.event-card-large {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    background-color: #242424;
+    padding: 1rem;
+    border-radius: 8px;
+}
 
-    <main class="main-content">
-        <section class="on-going-event">
-            <div class="section-header">
-                <h2 class="section-title">ONGOING EVENT</h2>
-            </div>
-            <div class="event-card-large">
-                <div class="card-image-wrapper">
-                    <img src="assets/quality_restoration_20250824134017143.png" alt="DBA Special Match" class="event-poster">
-                </div>
-                <div class="card-content-wrapper">
-                    <h3 class="event-title-main">DBA SPECIAL MATCH</h3>
-                    <ul class="match-list">
-                        <li class="match-item">
-                            <div class="match-details">
-                                <span class="match-pair">YULZ CLOVER vs KAZZ</span>
-                                <span class="match-result win">WIN YULZ</span>
-                            </div>
-                            <div class="match-extra-info">
-                                <span class="match-tier">Mid Tier Battle</span>
-                            </div>
-                        </li>
-                        <li class="match-item">
-                            <div class="match-details">
-                                <span class="match-pair">IULIAN vs KARIZ</span>
-                                <span class="match-result pending">??</span>
-                            </div>
-                            <div class="match-extra-info">
-                                <span class="match-tier">High Tier Battle</span>
-                            </div>
-                        </li>
-                        <li class="match-item">
-                            <div class="match-details">
-                                <span class="match-pair">RANZT vs HIROO</span>
-                                <span class="match-result pending">??</span>
-                            </div>
-                            <div class="match-extra-info">
-                                <span class="match-tier">High Tier Battle</span>
-                            </div>
-                        </li>
-                        <li class="match-item">
-                            <div class="match-details">
-                                <span class="match-pair">ADYY vs AHENG</span>
-                                <span class="match-result pending">??</span>
-                            </div>
-                            <div class="match-extra-info">
-                                <span class="match-tier">High Tier Battle</span>
-                            </div>
-                        </li>
-                        <li class="match-item">
-                            <div class="match-details">
-                                <span class="match-pair">AARON vs HYRUKI/DEATH END</span>
-                                <span class="match-result pending">??</span>
-                            </div>
-                            <div class="match-extra-info">
-                                <span class="match-tier">High Tier Battle</span>
-                            </div>
-                        </li>
-                    </ul>
-                </div>
-            </div>
-        </section>
+.card-image-wrapper {
+    width: 100%;
+    margin-bottom: 1rem;
+}
 
-        <section class="upcoming-events">
-            <div class="section-header">
-                <h2 class="section-title">UPCOMING EVENTS</h2>
-            </div>
-            <div class="event-grid">
-                <a href="#" class="upcoming-event-card">
-                    <img src="assets/Nama Proyek 63.png" alt="DBA 3" class="upcoming-poster">
-                    <div class="upcoming-details">
-                        <h4 class="upcoming-title">DBA 3: Indonesia vs Malaysia 2</h4>
-                        <span class="upcoming-date">Coming Soon</span>
-                    </div>
-                </a>
-                <a href="#" class="upcoming-event-card">
-                    <img src="assets/IMG_6390.png" alt="DBA Ragnarok" class="upcoming-poster">
-                    <div class="upcoming-details">
-                        <h4 class="upcoming-title">DBA Ragnarok</h4>
-                        <span class="upcoming-date">TBA</span>
-                    </div>
-                </a>
-                <a href="#" class="upcoming-event-card">
-                    <img src="assets/IMG_6384.png" alt="DBA Battle Memes" class="upcoming-poster">
-                    <div class="upcoming-details">
-                        <h4 class="upcoming-title">DBA Battle Memes</h4>
-                        <span class="upcoming-date">TBA</span>
-                    </div>
-                </a>
-                <a href="#" class="upcoming-event-card">
-                    <img src="assets/IMG_6386.png" alt="DBA 4" class="upcoming-poster">
-                    <div class="upcoming-details">
-                        <h4 class="upcoming-title">DBA 4</h4>
-                        <span class="upcoming-date">TBA</span>
-                    </div>
-                </a>
-            </div>
-        </section>
-    </main>
+.event-poster {
+    max-width: 100%;
+    height: auto;
+    display: block;
+    border-radius: 8px;
+}
 
-    <footer class="main-footer">
-        <div class="footer-content">
-            <div class="footer-logo">DBA</div>
-            <nav class="footer-nav">
-                <ul>
-                    <li><a href="#">Privacy Policy</a></li>
-                    <li><a href="#">Terms of Use</a></li>
-                    <li><a href="#">Contact Us</a></li>
-                </ul>
-            </nav>
-            <div class="footer-social">
-                <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
-                <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
-                <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
-                <a href="#" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
-            </div>
-        </div>
-        <div class="copyright">
-            <p>&copy; 2025 Debater Battle Arena. All Rights Reserved.</p>
-        </div>
-    </footer>
+.card-content-wrapper {
+    width: 100%;
+}
 
-    <script src="js/script.js"></script>
-</body>
-</html>
+.event-title-main {
+    font-size: 1.25rem;
+    font-weight: 900;
+    color: #ffcc00;
+    margin-bottom: 1rem;
+}
+
+.match-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.match-item {
+    background-color: #333;
+    color: #f0f0f0;
+    padding: 10px;
+    border-radius: 6px;
+    margin-bottom: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.match-details {
+    width: 100%;
+    font-size: 1rem;
+    font-weight: 700;
+    color: #ddd;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.match-pair {
+    flex-grow: 1;
+}
+
+.match-result {
+    font-size: 0.9rem;
+    font-weight: 900;
+    padding: 2px 8px;
+    border-radius: 4px;
+    color: #111;
+}
+
+.match-result.win {
+    background-color: #4CAF50;
+}
+
+.match-result.pending {
+    background-color: #FFC107;
+}
+
+.match-extra-info {
+    font-size: 0.8rem;
+    color: #bbb;
+    margin-top: 5px;
+}
+
+/* Upcoming events grid */
+.event-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
+}
+
+.upcoming-event-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    text-decoration: none;
+    background-color: #242424;
+    padding: 1rem;
+    border-radius: 8px;
+}
+
+.upcoming-poster {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+}
+
+.upcoming-details {
+    margin-top: 0.75rem;
+}
+
+.upcoming-title {
+    font-size: 0.9rem;
+    color: #f0f0f0;
+    font-weight: 700;
+    margin-bottom: 0.25rem;
+}
+
+.upcoming-date {
+    font-size: 0.75rem;
+    color: #bbb;
+}
+.card-image-wrapper {
+    width: 100%;
+    margin-bottom: 1rem;
+    overflow: hidden; /* Tambahkan ini */
+    border-radius: 8px; /* Pastikan ini ada agar sudutnya melengkung */
+}
+
+.event-poster {
+    width: 100%; /* Ubah max-width menjadi width */
+    height: auto;
+    display: block;
+    border-radius: 8px;
+}
+/* Gaya untuk daftar pertandingan secara keseluruhan */
+.match-list {
+    list-style: none;
+    padding: 0;
+    margin: 20px 0;
+    display: flex;
+    flex-direction: column;
+    gap: 10px; /* Memberi jarak antar setiap kartu */
+}
+
+/* Gaya untuk setiap kartu pertandingan */
+.match-item {
+    background-color: #2b2b2b; /* Warna latar belakang kartu yang lebih gelap */
+    padding: 15px;
+    border-radius: 10px; /* Sudut membulat */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Efek bayangan untuk kesan 3D */
+    transition: transform 0.2s ease-in-out; /* Transisi saat dihover */
+}
+
+.match-item:hover {
+    transform: translateY(-3px); /* Kartu sedikit terangkat saat dihover */
+}
+
+/* Gaya untuk detail pertandingan (nama dan tier) */
+.match-details {
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+}
+
+.match-pair {
+    font-size: 1.1em; /* Ukuran font lebih besar untuk nama pemain */
+    font-weight: 700; /* Tebal */
+    color: #ffffff; /* Warna teks putih */
+    margin-bottom: 5px;
+}
+
+.match-tier {
+    font-size: 0.9em; /* Ukuran font lebih kecil untuk tier */
+    color: #aaaaaa; /* Warna abu-abu yang lebih lembut */
+}
+
+/* Gaya untuk tombol hasil pertandingan */
+.match-result {
+    padding: 8px 15px;
+    border-radius: 20px;
+    font-weight: 700;
+    font-size: 0.9em;
+    color: #1a1a1a;
+    text-transform: uppercase;
+    text-align: center;
+}
+
+/* Warna untuk hasil kemenangan */
+.match-result.win {
+    background-color: #4CAF50; /* Hijau */
+}
+
+/* Warna untuk hasil yang belum ditentukan */
+.match-result.pending {
+    background-color: #FFC107; /* Kuning */
+}
+
+
