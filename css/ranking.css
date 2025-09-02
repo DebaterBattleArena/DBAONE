@@ -1,4 +1,6 @@
-/* General ranking page styles */
+/* ==================================== */
+/* 1. Base & Global Styles     */
+/* ==================================== */
 :root {
     --text-primary: #f0f0f0;
     --text-secondary: #aaaaaa;
@@ -8,17 +10,29 @@
     --color-accent-yellow: #ffcc00;
     --color-accent-red: #ff3333;
     --color-border: #333333;
+    --box-shadow-light: 0 2px 5px rgba(0, 0, 0, 0.2);
+    --box-shadow-dark: 0 5px 10px rgba(0, 0, 0, 0.4);
+    --transition-timing: 0.2s ease;
 }
 
 body {
     background-color: var(--bg-dark);
+    /* Mengatur margin dan padding global untuk konsistensi */
+    margin: 0;
+    padding: 0;
+    font-family: 'Roboto', sans-serif; /* Tambahkan font family global */
 }
 
+/* ==================================== */
+/* 2. Ranking Page Layout      */
+/* ==================================== */
 .ranking-section {
     padding: 2rem 1rem;
     min-height: 100vh;
+    box-sizing: border-box; /* Pastikan padding tidak menambah ukuran total */
 }
 
+/* Section Header */
 .section-header {
     text-align: center;
     margin-bottom: 2rem;
@@ -31,36 +45,39 @@ body {
     width: 60px;
     height: 3px;
     background-color: var(--color-accent-yellow);
-    margin: 0 auto;
-    margin-top: 10px;
+    margin: 10px auto 0;
 }
 
 .section-title {
     color: var(--text-primary);
-    font-size: 2.2rem;
+    font-size: clamp(1.8rem, 5vw, 2.2rem); /* Gunakan clamp untuk responsivitas */
     font-weight: 900;
     text-transform: uppercase;
     letter-spacing: 2px;
 }
 
-/* Division-specific styling */
+/* Division Containers */
 .ranking-division-container {
     display: flex;
     flex-direction: column;
     gap: 20px;
+    /* Optional: Menggunakan grid untuk tata letak yang lebih fleksibel */
+    /* display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px; */
 }
 
 .division-card {
     background-color: var(--bg-card);
     border-radius: 12px;
     padding: 20px;
-    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.4);
+    box-shadow: var(--box-shadow-dark);
     border: 1px solid var(--color-border);
 }
 
 .division-title {
     color: var(--color-accent-yellow);
-    font-size: 1.6rem;
+    font-size: clamp(1.4rem, 4vw, 1.6rem);
     font-weight: 700;
     text-transform: uppercase;
     margin-bottom: 15px;
@@ -68,6 +85,9 @@ body {
     padding-bottom: 10px;
 }
 
+/* ==================================== */
+/* 3. Ranking List & Items       */
+/* ==================================== */
 .ranking-list {
     list-style: none;
     padding: 0;
@@ -83,38 +103,53 @@ body {
     background-color: var(--bg-card-light);
     padding: 10px 15px;
     border-radius: 8px;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
-    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    box-shadow: var(--box-shadow-light);
+    transition: transform var(--transition-timing), box-shadow var(--transition-timing);
     border: 1px solid #2e2e2e;
 }
 
 .ranking-item:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+    transform: translateY(-3px); /* Sedikit lebih jauh untuk efek yang lebih jelas */
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.4); /* Efek bayangan yang lebih kuat */
 }
 
-.rank-number, .rank-label {
-    font-size: 1.8rem;
-    font-weight: 900;
-    color: var(--color-accent-red);
-    width: 35px; /* Adjust width to make it more compact */
-    text-align: center;
-    flex-shrink: 0;
-}
-
-.rank-label {
-    font-size: 0.8rem;
-    color: var(--color-accent-yellow);
-    text-transform: uppercase;
-    width: 90px;
-    text-align: center;
-}
-
+/* Champion Item */
 .ranking-item.champion {
     background-color: #3e3e3e;
     border: 2px solid var(--color-accent-yellow);
 }
 
+.ranking-item.champion .rank-label {
+    /* Atur ulang gaya rank-label untuk champion di sini */
+    font-size: 1.8rem;
+    font-weight: 900;
+    color: var(--color-accent-yellow);
+    width: 35px;
+    text-align: center;
+    line-height: 1;
+    text-shadow: 0 0 5px var(--color-accent-yellow);
+}
+
+/* Rank Number & Label */
+.rank-number,
+.rank-label {
+    font-size: 1.8rem;
+    font-weight: 900;
+    color: var(--color-accent-red);
+    width: 35px;
+    text-align: center;
+    flex-shrink: 0;
+}
+
+.rank-label {
+    /* Gaya untuk label 'K' yang bukan champion */
+    font-size: 0.8rem;
+    color: var(--color-accent-yellow);
+    text-transform: uppercase;
+    width: 90px;
+}
+
+/* Debater Info */
 .debater-info {
     display: flex;
     align-items: center;
@@ -151,29 +186,9 @@ body {
     width: 50px;
 }
 
-/* --- Perubahan untuk King Division --- */
-
-.ranking-item.king-division {
-    background-color: var(--bg-card);
-    border: 2px solid var(--color-accent-yellow);
-    box-shadow: 0 5px 10px rgba(255, 204, 0, 0.3);
-}
-
-.king-rank-label {
-    font-size: 1.8rem;
-    font-weight: 900;
-    color: var(--color-accent-yellow);
-    width: 35px;
-    text-align: center;
-    flex-shrink: 0;
-    line-height: 1; /* Sesuaikan line-height */
-    /* Efek teks glow (opsional) */
-    text-shadow: 0 0 5px var(--color-accent-yellow);
-}
-
-/* --- Akhir perubahan --- */
-
-/* Responsive adjustments */
+/* ==================================== */
+/* 4. Media Queries            */
+/* ==================================== */
 @media (max-width: 600px) {
     .ranking-section {
         padding: 1rem 0.5rem;
@@ -183,12 +198,13 @@ body {
         padding: 15px;
     }
 
+    /* Menggunakan clamp untuk konsistensi */
     .section-title {
-        font-size: 1.8rem;
+        font-size: clamp(1.6rem, 5vw, 1.8rem);
     }
 
     .division-title {
-        font-size: 1.4rem;
+        font-size: clamp(1.2rem, 4vw, 1.4rem);
     }
 
     .ranking-item {
