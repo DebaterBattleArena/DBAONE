@@ -16,24 +16,22 @@
     <header class="main-header">
         <div class="header-content">
             <div class="header-left">
-                <button class="nav-toggle" aria-label="Toggle navigation menu">
+                <button class="nav-toggle" aria-label="Toggle navigation menu" aria-controls="main-nav-mobile" aria-expanded="false">
                     <i class="fas fa-bars"></i>
                 </button>
-                <div class="logo">DBA</div>
-            </div>
-            <nav class="main-nav-desktop">
-                <ul>
+                <a href="index.html" class="logo">DBA</a> </div>
+            <nav class="main-nav-desktop" id="main-nav-desktop"> <ul>
                     <li><a href="index.html" class="nav-link">Home</a></li>
                     <li><a href="archive.html" class="nav-link">Archive</a></li>
-                    <li><a href="ranking.html" class="nav-link active">Ranking</a></li>
-                    <li><a href="debaters.html" class="nav-link">Debaters</a></li>
+                    <li><a href="ranking.html" class="nav-link active" aria-current="page">Ranking</a></li> <li><a href="debaters.html" class="nav-link">Debaters</a></li>
                 </ul>
             </nav>
             <div class="search-container">
-                <input type="text" id="searchInput" class="search-input" placeholder="Search Debaters...">
-                <button id="searchButton" class="search-button" aria-label="Search">
-                    <i class="fas fa-search"></i>
-                </button>
+                <form action="/search" method="get" role="search"> <label for="searchInput" class="sr-only">Search Debaters</label> <input type="search" id="searchInput" class="search-input" placeholder="Search Debaters..." name="q">
+                    <button type="submit" id="searchButton" class="search-button" aria-label="Search">
+                        <i class="fas fa-search"></i>
+                    </button>
+                </form>
             </div>
         </div>
     </header>
@@ -41,213 +39,80 @@
     <main class="main-content">
         <section class="ranking-section">
             <div class="section-header">
-                <h2 class="section-title">DEBATER RANKING</h2>
-            </div>
+                <h1 class="section-title">DEBATER RANKING</h1> </div>
             
             <div class="ranking-division-container">
-                <div class="division-card">
-                    <h3 class="division-title">HIGH TIER DIVISION</h3>
-                    <div class="ranking-list">
-                        <div class="ranking-item champion">
+                <div class="division-card" role="region" aria-labelledby="high-tier-title">
+                    <h2 class="division-title" id="high-tier-title">HIGH TIER DIVISION</h2>
+                    <ul class="ranking-list"> <li class="ranking-item champion">
                             <span class="rank-label">K</span>
                             <div class="debater-info">
-                                <img src="assets/debater_lianx.png" alt="Lianx" class="debater-avatar">
+                                <img src="assets/debater_lianx.png" alt="Foto profil Lianx" class="debater-avatar">
                                 <span class="debater-name">Lianx</span>
                             </div>
                             <span class="debater-record">1-0</span>
-                        </div>
-
-                        <div class="ranking-item">
+                        </li>
+                        <li class="ranking-item">
                             <span class="rank-number">1</span>
                             <div class="debater-info">
-                                <img src="assets/debater_aaron.png" alt="Aaron" class="debater-avatar">
+                                <img src="assets/debater_aaron.png" alt="Foto profil Aaron" class="debater-avatar">
                                 <span class="debater-name">Aaron</span>
                             </div>
                             <span class="debater-record">1-0</span>
-                        </div>
-                        <div class="ranking-item">
-                            <span class="rank-number">2</span>
-                            <div class="debater-info">
-                                <img src="assets/debater_aheng.png" alt="Aheng" class="debater-avatar">
-                                <span class="debater-name">Aheng</span>
-                            </div>
-                            <span class="debater-record">1-0</span>
-                        </div>
-                        <div class="ranking-item">
-                            <span class="rank-number">3</span>
-                            <div class="debater-info">
-                                <img src="assets/debater_adyy.png" alt="Adyy" class="debater-avatar">
-                                <span class="debater-name">Adyy</span>
-                            </div>
-                            <span class="debater-record">1-1</span>
-                        </div>
-                        <div class="ranking-item">
-                            <span class="rank-number">4</span>
-                            <div class="debater-info">
-                                <img src="assets/debater_zogratis.png" alt="Zogratis" class="debater-avatar">
-                                <span class="debater-name">Zogratis</span>
-                            </div>
-                            <span class="debater-record">1-1</span>
-                        </div>
-                        <div class="ranking-item">
-                            <span class="rank-number">5</span>
-                            <div class="debater-info">
-                                <img src="assets/debater_ryuu.png" alt="Ryuu" class="debater-avatar">
-                                <span class="debater-name">Ryuu</span>
-                            </div>
-                            <span class="debater-record">1-1</span>
-                        </div>
-                        <div class="ranking-item">
-                            <span class="rank-number">6</span>
-                            <div class="debater-info">
-                                <img src="assets/debater_shade.png" alt="Shade" class="debater-avatar">
-                                <span class="debater-name">Shade</span>
-                            </div>
-                            <span class="debater-record">1-1</span>
-                        </div>
-                        <div class="ranking-item">
-                            <span class="rank-number">7</span>
-                            <div class="debater-info">
-                                <img src="assets/debater_aryanwt.png" alt="Aryanwt" class="debater-avatar">
-                                <span class="debater-name">Aryanwt</span>
-                            </div>
-                            <span class="debater-record">0-1</span>
-                        </div>
-                        <div class="ranking-item">
-                            <span class="rank-number">8</span>
-                            <div class="debater-info">
-                                <img src="assets/debater_pratama.png" alt="Pratama" class="debater-avatar">
-                                <span class="debater-name">Pratama</span>
-                            </div>
-                            <span class="debater-record">0-1</span>
-                        </div>
-                        <div class="ranking-item">
-                            <span class="rank-number">9</span>
-                            <div class="debater-info">
-                                <img src="assets/debater_kyuki.png" alt="Kyuki" class="debater-avatar">
-                                <span class="debater-name">Kyuki</span>
-                            </div>
-                            <span class="debater-record">0-1</span>
-                        </div>
-                        <div class="ranking-item">
-                            <span class="rank-number">10</span>
-                            <div class="debater-info">
-                                <img src="assets/debater_raju.png" alt="Raju" class="debater-avatar">
-                                <span class="debater-name">Raju</span>
-                            </div>
-                            <span class="debater-record">0-1</span>
-                        </div>
-                        <div class="ranking-item">
-                            <span class="rank-number">11</span>
-                            <div class="debater-info">
-                                <img src="assets/debater_muchibei.png" alt="Muchibei" class="debater-avatar">
-                                <span class="debater-name">Muchibei</span>
-                            </div>
-                            <span class="debater-record">0-1</span>
-                        </div>
-                        <div class="ranking-item">
-                            <span class="rank-number">12</span>
-                            <div class="debater-info">
-                                <img src="assets/debater_hyruki.png" alt="Hyruki" class="debater-avatar">
-                                <span class="debater-name">Hyruki</span>
-                            </div>
-                            <span class="debater-record">0-0</span>
-                        </div>
-                        <div class="ranking-item">
-                            <span class="rank-number">13</span>
-                            <div class="debater-info">
-                                <img src="assets/debater_kariz.png" alt="Kariz" class="debater-avatar">
-                                <span class="debater-name">Kariz</span>
-                            </div>
-                            <span class="debater-record">0-0</span>
-                        </div>
-                    </div>
+                        </li>
+                        </ul>
                 </div>
-
-                <div class="division-card">
-                    <h3 class="division-title">MID TIER DIVISION</h3>
-                    <div class="ranking-list">
-                        <div class="ranking-item champion">
+                
+                <div class="division-card" role="region" aria-labelledby="mid-tier-title">
+                    <h2 class="division-title" id="mid-tier-title">MID TIER DIVISION</h2>
+                    <ul class="ranking-list">
+                        <li class="ranking-item champion">
                             <span class="rank-label">K</span>
                             <div class="debater-info">
-                                <img src="assets/IMG_7870.jpeg" alt="Vacant" class="debater-avatar">
+                                <img src="assets/IMG_7870.jpeg" alt="Foto profil yang kosong" class="debater-avatar">
                                 <span class="debater-name">VACANT</span>
                             </div>
                             <span class="debater-record">-</span>
-                        </div>
-
-                        <div class="ranking-item">
+                        </li>
+                        <li class="ranking-item">
                             <span class="rank-number">1</span>
                             <div class="debater-info">
-                                <img src="assets/IMG_7175.jpeg" alt="Ranzt" class="debater-avatar">
+                                <img src="assets/IMG_7175.jpeg" alt="Foto profil Ranzt" class="debater-avatar">
                                 <span class="debater-name">Ranzt</span>
                             </div>
                             <span class="debater-record">1-0</span>
-                        </div>
-                        <div class="ranking-item">
-                            <span class="rank-number">2</span>
-                            <div class="debater-info">
-                                <img src="assets/IMG_7176.jpeg" alt="Hiroo" class="debater-avatar">
-                                <span class="debater-name">Hiroo</span>
-                            </div>
-                            <span class="debater-record">1-0</span>
-                        </div>
-                        <div class="ranking-item">
-                            <span class="rank-number">3</span>
-                            <div class="debater-info">
-                                <img src="assets/IMG_7872.jpeg" alt="Yulzz" class="debater-avatar">
-                                <span class="debater-name">Yulzz</span>
-                            </div>
-                            <span class="debater-record">1-0</span>
-                        </div>
-                        <div class="ranking-item">
-                            <span class="rank-number">4</span>
-                            <div class="debater-info">
-                                <img src="assets/IMG_7874.jpeg" alt="Renji" class="debater-avatar">
-                                <span class="debater-name">Renji</span>
-                            </div>
-                            <span class="debater-record">0-1</span>
-                        </div>
-                        <div class="ranking-item">
-                            <span class="rank-number">5</span>
-                            <div class="debater-info">
-                                <img src="assets/IMG_7873.jpeg" alt="Kazz" class="debater-avatar">
-                                <span class="debater-name">Kazz</span>
-                            </div>
-                            <span class="debater-record">0-1</span>
-                        </div>
-                    </div>
+                        </li>
+                        </ul>
                 </div>
 
-                <div class="division-card">
-                    <h3 class="division-title">LOW TIER DIVISION</h3>
-                    <div class="ranking-list">
-                        <div class="ranking-item champion">
+                <div class="division-card" role="region" aria-labelledby="low-tier-title">
+                    <h2 class="division-title" id="low-tier-title">LOW TIER DIVISION</h2>
+                    <ul class="ranking-list">
+                        <li class="ranking-item champion">
                             <span class="rank-label">K</span>
                             <div class="debater-info">
-                                <img src="assets/placeholder.png" alt="Vacant" class="debater-avatar">
+                                <img src="assets/placeholder.png" alt="Foto profil yang kosong" class="debater-avatar">
                                 <span class="debater-name">VACANT</span>
                             </div>
                             <span class="debater-record">-</span>
-                        </div>
-
-                        <div class="ranking-item">
+                        </li>
+                        <li class="ranking-item">
                             <span class="rank-number">1</span>
                             <div class="debater-info">
-                                <img src="assets/debater_thinzel.png" alt="Thinzel" class="debater-avatar">
+                                <img src="assets/debater_thinzel.png" alt="Foto profil Thinzel" class="debater-avatar">
                                 <span class="debater-name">Thinzel</span>
                             </div>
                             <span class="debater-record">0-1</span>
-                        </div>
-                        <div class="ranking-item">
+                        </li>
+                        <li class="ranking-item">
                             <span class="rank-number">2</span>
                             <div class="debater-info">
-                                <img src="assets/debater_rim.png" alt="Rim" class="debater-avatar">
+                                <img src="assets/debater_rim.png" alt="Foto profil Rim" class="debater-avatar">
                                 <span class="debater-name">Rim</span>
                             </div>
                             <span class="debater-record">0-1</span>
-                        </div>
-                    </div>
+                        </li>
+                    </ul>
                 </div>
             </div>
         </section>
@@ -264,12 +129,10 @@
                 </ul>
             </nav>
             <div class="footer-social">
-                <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
-                <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
-                <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
-                <a href="#" aria-label="YouTube">
-                    <i class="fab fa-youtube"></i>
-                </a>
+                <a href="#" aria-label="Kunjungi kami di Facebook"><i class="fab fa-facebook-f"></i></a>
+                <a href="#" aria-label="Kunjungi kami di Twitter"><i class="fab fa-twitter"></i></a>
+                <a href="#" aria-label="Kunjungi kami di Instagram"><i class="fab fa-instagram"></i></a>
+                <a href="#" aria-label="Kunjungi kami di YouTube"><i class="fab fa-youtube"></i></a>
             </div>
         </div>
         <div class="copyright">
