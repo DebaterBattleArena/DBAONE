@@ -7,31 +7,31 @@
     
     <link rel="stylesheet" href="css/bundle.css">
     
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700;900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700;900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 <body>
 
     <header class="main-header">
         <div class="header-content">
-            <div class="header-left">
-                <button class="nav-toggle" aria-label="Toggle navigation menu" aria-expanded="false">
-                    <i class="fas fa-bars"></i>
-                </button>
-                <a href="index.html" class="logo">DBA</a>
-            </div>
+            <a href="index.html" class="logo">DBA</a>
             <nav class="main-nav-desktop">
                 <ul>
-                    <li><a href="index.html" class="nav-link">Home</a></li>
-                    <li><a href="archive.html" class="nav-link">Archive</a></li>
-                    <li><a href="ranking.html" class="nav-link">Ranking</a></li>
-                    <li><a href="debaters.html" class="nav-link">Debaters</a></li>
+                    <li><a href="index.html" class="nav-link">HOME</a></li>
+                    <li><a href="archive.html" class="nav-link">ARCHIVE</a></li>
+                    <li><a href="ranking.html" class="nav-link">RANKING</a></li>
+                    <li><a href="debaters.html" class="nav-link">DEBATERS</a></li>
                 </ul>
             </nav>
-            <div class="search-container">
-                <input type="text" id="searchInput" class="search-input" placeholder="Search Debaters...">
-                <button id="searchButton" class="search-button" aria-label="Search">
-                    <i class="fas fa-search"></i>
+            <div class="header-actions">
+                <div class="search-container">
+                    <input type="text" id="searchInput" class="search-input" placeholder="Search...">
+                    <button id="searchButton" class="search-button" aria-label="Search">
+                        <i class="fas fa-search"></i>
+                    </button>
+                </div>
+                <button class="nav-toggle" aria-label="Toggle navigation menu" aria-expanded="false">
+                    <i class="fas fa-bars"></i>
                 </button>
             </div>
         </div>
@@ -45,7 +45,7 @@
             </button>
         </div>
         <div class="search-container-mobile">
-            <input type="text" id="searchInputMobile" class="search-input" placeholder="Search Debaters...">
+            <input type="text" id="searchInputMobile" class="search-input" placeholder="Search...">
             <button id="searchButtonMobile" class="search-button" aria-label="Search">
                 <i class="fas fa-search"></i>
             </button>
@@ -60,141 +60,98 @@
             <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
             <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
             <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
-            <a href="#" aria-label="YouTube">
-                <i class="fab fa-youtube"></i>
-            </a>
+            <a href="#" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
         </div>
     </nav>
 
     <main class="main-content">
-        <section class="on-going-event section">
-            <div class="section-header">
-                <h2 class="section-title">ONGOING EVENT</h2>
+        <section class="hero-section">
+            <div class="hero-image-wrapper">
+                <img src="assets/quality_restoration_20250824134017143.png" alt="DBA Special Match" class="hero-image">
+                <div class="hero-overlay"></div>
             </div>
-            <div class="event-card-large card"> <div class="card-image-wrapper">
-                    <img src="assets/quality_restoration_20250824134017143.png" alt="DBA Special Match" class="event-poster">
+            <div class="hero-content">
+                <h1 class="hero-title">DBA SPECIAL MATCH</h1>
+                <p class="hero-subtitle">ONGOING EVENT</p>
+                <div class="match-details-hero">
+                    <div class="match-pair-hero">YULZ CLOVER vs KAZZ</div>
+                    <span class="match-result-hero win">WIN YULZ</span>
                 </div>
-                <div class="card-content-wrapper">
-                    <h3 class="event-title-main">DBA SPECIAL MATCH</h3>
-                    <ul class="match-list">
-                        <li class="match-item">
-                            <div class="match-details">
-                                <span class="match-pair">YULZ CLOVER vs KAZZ</span>
-                                <span class="match-result win">WIN YULZ</span>
+                <a href="#ongoing" class="cta-button">VIEW EVENT</a>
+            </div>
+        </section>
+
+        <section class="ongoing-matches section" id="ongoing">
+            <div class="section-header">
+                <h2 class="section-title">ONGOING MATCHES</h2>
+            </div>
+            <div class="match-card-grid">
+                <div class="match-card card">
+                    <div class="match-card-header">
+                        <span class="match-tier">High Tier Battle</span>
+                        <span class="match-date">TODAY</span>
+                    </div>
+                    <div class="match-debaters">
+                        <div class="debater-info">
+                            <img src="assets/IMG_7171.jpeg" alt="Iulian" class="debater-photo">
+                            <span class="debater-name">IULIAN</span>
+                        </div>
+                        <span class="vs">VS</span>
+                        <div class="debater-info">
+                            <img src="assets/IMG_7174.jpeg" alt="Kariz" class="debater-photo">
+                            <span class="debater-name">KARIZ</span>
+                        </div>
+                    </div>
+                    <div class="prediction-section" data-match-id="iulian-kariz">
+                        <div class="prediction-option" data-option="iulian">
+                            <div class="prediction-fill" style="width: 70%;"></div>
+                            <div class="prediction-content">
+                                <span class="debater-name-small">Iulian</span>
+                                <span class="percentage">70%</span>
                             </div>
-                            <div class="match-extra-info">
-                                <span class="match-tier">Mid Tier Battle</span>
+                        </div>
+                        <div class="prediction-option" data-option="kariz">
+                            <div class="prediction-fill" style="width: 30%;"></div>
+                            <div class="prediction-content">
+                                <span class="debater-name-small">Kariz</span>
+                                <span class="percentage">30%</span>
                             </div>
-                        </li>
-                        <li class="match-item">
-                            <div class="match-details">
-                                <span class="match-pair">IULIAN vs KARIZ</span>
-                                <span class="match-result pending">??</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="match-card card">
+                    <div class="match-card-header">
+                        <span class="match-tier">Mid Tier Battle</span>
+                        <span class="match-date">TODAY</span>
+                    </div>
+                    <div class="match-debaters">
+                        <div class="debater-info">
+                            <img src="assets/IMG_7175.jpeg" alt="Ranzt" class="debater-photo">
+                            <span class="debater-name">RANZT</span>
+                        </div>
+                        <span class="vs">VS</span>
+                        <div class="debater-info">
+                            <img src="assets/IMG_7176.jpeg" alt="Hiroo" class="debater-photo">
+                            <span class="debater-name">HIROO</span>
+                        </div>
+                    </div>
+                    <div class="prediction-section" data-match-id="ranzt-hiroo">
+                        <div class="prediction-option" data-option="ranzt">
+                            <div class="prediction-fill" style="width: 55%;"></div>
+                            <div class="prediction-content">
+                                <span class="debater-name-small">Ranzt</span>
+                                <span class="percentage">55%</span>
                             </div>
-                            <div class="match-extra-info">
-                                <span class="match-tier">High Tier Battle</span>
+                        </div>
+                        <div class="prediction-option" data-option="hiroo">
+                            <div class="prediction-fill" style="width: 45%;"></div>
+                            <div class="prediction-content">
+                                <span class="debater-name-small">Hiroo</span>
+                                <span class="percentage">45%</span>
                             </div>
-                            <div class="prediction-section" data-match-id="iulian-kariz">
-                                <div class="prediction-option" data-option="iulian">
-                                    <div class="prediction-content">
-                                        <img src="assets/IMG_7171.jpeg" alt="Iulian" class="debater-image">
-                                        <span class="debater-name">Iulian</span>
-                                        <span class="percentage">70%</span>
-                                    </div>
-                                    <div class="prediction-fill" style="width: 70%;"></div>
-                                </div>
-                                <div class="prediction-option" data-option="kariz">
-                                    <div class="prediction-content">
-                                        <img src="assets/IMG_7174.jpeg" alt="Kariz" class="debater-image">
-                                        <span class="debater-name">Kariz</span>
-                                        <span class="percentage">30%</span>
-                                    </div>
-                                    <div class="prediction-fill" style="width: 30%;"></div>
-                                </div>
-                            </div>
-                        </li>
-                        <li class="match-item">
-                            <div class="match-details">
-                                <span class="match-pair">RANZT vs HIROO</span>
-                                <span class="match-result pending">??</span>
-                            </div>
-                            <div class="match-extra-info">
-                                <span class="match-tier">Mid Tier Battle</span>
-                            </div>
-                            <div class="prediction-section" data-match-id="ranzt-hiroo">
-                                <div class="prediction-option" data-option="ranzt">
-                                    <div class="prediction-content">
-                                        <img src="assets/IMG_7175.jpeg" alt="Ranzt" class="debater-image">
-                                        <span class="debater-name">Ranzt</span>
-                                        <span class="percentage">55%</span>
-                                    </div>
-                                    <div class="prediction-fill" style="width: 55%;"></div>
-                                </div>
-                                <div class="prediction-option" data-option="hiroo">
-                                    <div class="prediction-content">
-                                        <img src="assets/IMG_7176.jpeg" alt="Hiroo" class="debater-image">
-                                        <span class="debater-name">Hiroo</span>
-                                        <span class="percentage">45%</span>
-                                    </div>
-                                    <div class="prediction-fill" style="width: 45%;"></div>
-                                </div>
-                            </div>
-                        </li>
-                        <li class="match-item">
-                            <div class="match-details">
-                                <span class="match-pair">ADYY vs AHENG</span>
-                                <span class="match-result pending">??</span>
-                            </div>
-                            <div class="match-extra-info">
-                                <span class="match-tier">High Tier Battle</span>
-                            </div>
-                            <div class="prediction-section" data-match-id="adyy-aheng">
-                                <div class="prediction-option" data-option="adyy">
-                                    <div class="prediction-content">
-                                        <img src="assets/IMG_7177.jpeg" alt="Adyy" class="debater-image">
-                                        <span class="debater-name">Adyy</span>
-                                        <span class="percentage">60%</span>
-                                    </div>
-                                    <div class="prediction-fill" style="width: 60%;"></div>
-                                </div>
-                                <div class="prediction-option" data-option="aheng">
-                                    <div class="prediction-content">
-                                        <img src="assets/IMG_7178.jpeg" alt="Aheng" class="debater-image">
-                                        <span class="debater-name">Aheng</span>
-                                        <span class="percentage">40%</span>
-                                    </div>
-                                    <div class="prediction-fill" style="width: 40%;"></div>
-                                </div>
-                            </div>
-                        </li>
-                        <li class="match-item">
-                            <div class="match-details">
-                                <span class="match-pair">AARON vs HYRUKI/DEATH END</span>
-                                <span class="match-result pending">??</span>
-                            </div>
-                            <div class="match-extra-info">
-                                <span class="match-tier">High Tier Battle</span>
-                            </div>
-                            <div class="prediction-section" data-match-id="aaron-hyruki">
-                                <div class="prediction-option" data-option="aaron">
-                                    <div class="prediction-content">
-                                        <img src="assets/IMG_7180.jpeg" alt="Aaron" class="debater-image">
-                                        <span class="debater-name">Aaron</span>
-                                        <span class="percentage">50%</span>
-                                    </div>
-                                    <div class="prediction-fill" style="width: 50%;"></div>
-                                </div>
-                                <div class="prediction-option" data-option="hyruki">
-                                    <div class="prediction-content">
-                                        <img src="assets/IMG_7181.jpeg" alt="Hyruki/Death End" class="debater-image">
-                                        <span class="debater-name">Hyruki</span>
-                                        <span class="percentage">50%</span>
-                                    </div>
-                                    <div class="prediction-fill" style="width: 50%;"></div>
-                                </div>
-                            </div>
-                        </li>
-                    </ul>
+                        </div>
+                    </div>
                 </div>
             </div>
         </section>
@@ -204,31 +161,32 @@
                 <h2 class="section-title">UPCOMING EVENTS</h2>
             </div>
             <div class="event-grid">
-                <a href="#" class="upcoming-event-card card upcoming-event-card-youtube"> <img src="assets/IMG_6386.png" alt="DBA 3" class="upcoming-poster-youtube">
-                    <div class="upcoming-details-youtube">
-                        <h4 class="upcoming-title-youtube">DBA 3: Indonesia vs Malaysia 2</h4>
-                        <span class="upcoming-date-youtube">Coming Soon</span>
+                <a href="#" class="upcoming-event-card card">
+                    <img src="assets/IMG_6386.png" alt="DBA 3" class="upcoming-poster">
+                    <div class="upcoming-details">
+                        <h4 class="upcoming-title">DBA 3: Indonesia vs Malaysia 2</h4>
+                        <span class="upcoming-date">Coming Soon</span>
                     </div>
                 </a>
-                <a href="#" class="upcoming-event-card card upcoming-event-card-youtube">
-                    <img src="assets/IMG_6390.png" alt="DBA Ragnarok" class="upcoming-poster-youtube">
-                    <div class="upcoming-details-youtube">
-                        <h4 class="upcoming-title-youtube">DBA Ragnarok</h4>
-                        <span class="upcoming-date-youtube">TBA</span>
+                <a href="#" class="upcoming-event-card card">
+                    <img src="assets/IMG_6390.png" alt="DBA Ragnarok" class="upcoming-poster">
+                    <div class="upcoming-details">
+                        <h4 class="upcoming-title">DBA Ragnarok</h4>
+                        <span class="upcoming-date">TBA</span>
                     </div>
                 </a>
-                <a href="#" class="upcoming-event-card card upcoming-event-card-youtube">
-                    <img src="assets/IMG_6384.png" alt="DBA Battle Memes" class="upcoming-poster-youtube">
-                    <div class="upcoming-details-youtube">
-                        <h4 class="upcoming-title-youtube">DBA Battle Memes</h4>
-                        <span class="upcoming-date-youtube">TBA</span>
+                <a href="#" class="upcoming-event-card card">
+                    <img src="assets/IMG_6384.png" alt="DBA Battle Memes" class="upcoming-poster">
+                    <div class="upcoming-details">
+                        <h4 class="upcoming-title">DBA Battle Memes</h4>
+                        <span class="upcoming-date">TBA</span>
                     </div>
                 </a>
-                <a href="#" class="upcoming-event-card card upcoming-event-card-youtube">
-                    <img src="assets/IMG_6386.png" alt="DBA 4" class="upcoming-poster-youtube">
-                    <div class="upcoming-details-youtube">
-                        <h4 class="upcoming-title-youtube">DBA 4</h4>
-                        <span class="upcoming-date-youtube">TBA</span>
+                <a href="#" class="upcoming-event-card card">
+                    <img src="assets/IMG_6386.png" alt="DBA 4" class="upcoming-poster">
+                    <div class="upcoming-details">
+                        <h4 class="upcoming-title">DBA 4</h4>
+                        <span class="upcoming-date">TBA</span>
                     </div>
                 </a>
             </div>
@@ -236,23 +194,22 @@
         
         <section class="comments-section section">
             <div class="section-header">
-                <h2 class="section-title">COMMENT</h2>
+                <h2 class="section-title">COMMENTS</h2>
             </div>
-            <div class="comment-form card"> <textarea placeholder="Tulis komentar Anda di sini..." class="comment-input"></textarea>
-                <button class="comment-submit" onclick="window.location.href='confirmation.html'">Send Comment</button>
-            </div>
-            <div class="comment-list">
-                <div class="comment-item card"> <div class="comment-avatar" style="background-image: url('assets/profile-sall-lutung.jpg');"></div>
-                    <div class="comment-content">
+            <div class="comment-list-grid">
+                <div class="comment-item card">
+                    <div class="comment-header">
+                        <div class="comment-avatar" style="background-image: url('assets/profile-sall-lutung.jpg');"></div>
                         <div class="comment-author">Sall_Lutung</div>
-                        <div class="comment-text">Ampuni gua william joe, masukin ke dba.</div>
                     </div>
+                    <div class="comment-text">Ampuni gua william joe, masukin ke dba.</div>
                 </div>
-                <div class="comment-item card"> <div class="comment-avatar" style="background-image: url('assets/profile-thinzel.jpg');"></div>
-                    <div class="comment-content">
+                <div class="comment-item card">
+                    <div class="comment-header">
+                        <div class="comment-avatar" style="background-image: url('assets/profile-thinzel.jpg');"></div>
                         <div class="comment-author">Thinzel</div>
-                        <div class="comment-text">Di penjaruy dingin euy.</div>
                     </div>
+                    <div class="comment-text">Di penjaruy dingin euy.</div>
                 </div>
             </div>
         </section>
@@ -272,9 +229,7 @@
                 <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
                 <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
                 <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
-                <a href="#" aria-label="YouTube">
-                    <i class="fab fa-youtube"></i>
-                </a>
+                <a href="#" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
             </div>
         </div>
         <div class="copyright">
@@ -283,5 +238,6 @@
     </footer>
 
     <script src="js/script.js"></script>
-    <script src="js/index.js"></script> </body>
+    <script src="js/index.js"></script> 
+</body>
 </html>
