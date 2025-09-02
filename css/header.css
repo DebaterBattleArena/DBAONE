@@ -1,10 +1,19 @@
-/*
- * Header & Navigation Styles for Debater Battle Arena
- * Desktop, Mobile, and Search Functionality
- * --------------------------------------------------------
- */
+/* ==================================== */
+/* Header & Navigation Styles */
+/* ==================================== */
+:root {
+    --text-primary: #f0f0f0;
+    --text-secondary: #aaaaaa;
+    --bg-dark: #0d0d0d;
+    --bg-card: #1a1a1a;
+    --color-accent-red: #ff3333;
+    --color-border: #333333;
+}
 
-/* Main Header Layout */
+body {
+    background-color: var(--bg-dark);
+}
+
 .main-header {
     background-color: #0d0d0d;
     padding: 15px 20px;
@@ -27,7 +36,6 @@
     align-items: center;
 }
 
-/* Logo */
 .logo {
     font-weight: 900;
     font-size: 2rem;
@@ -35,7 +43,7 @@
     margin-left: 10px;
 }
 
-/* Navigation Links (Desktop) */
+/* Navigasi Desktop */
 .main-nav-desktop {
     display: block;
 }
@@ -52,70 +60,21 @@
     padding: 10px 0;
     position: relative;
     text-transform: uppercase;
+    color: var(--text-secondary);
+    text-decoration: none;
 }
 
-.main-nav-desktop .nav-link::after {
-    content: '';
-    position: absolute;
-    left: 0;
-    bottom: -5px;
-    width: 0;
-    height: 2px;
-    background-color: var(--color-accent-red);
-    transition: width 0.3s ease;
-}
-
-.main-nav-desktop .nav-link:hover::after {
-    width: 100%;
-}
-
-/* Search Container */
-.search-container {
-    display: flex;
-    align-items: center;
-    background-color: var(--bg-card);
-    border-radius: 50px;
-    padding: 5px;
-    border: 1px solid var(--color-border);
-    transition: box-shadow 0.3s ease, border-color 0.3s ease;
-}
-
-.search-container:focus-within {
-    border-color: var(--color-accent-red);
-    box-shadow: 0 0 5px var(--color-accent-red);
-}
-
-.search-input {
-    background: transparent;
-    border: none;
+.main-nav-desktop .nav-link:hover {
     color: var(--text-primary);
-    padding: 8px 15px;
-    outline: none;
-    font-size: 0.9rem;
-    width: 200px;
 }
 
-.search-button {
-    background-color: var(--color-accent-red);
+.main-nav-desktop .nav-link.active {
     color: var(--text-primary);
-    border: none;
-    border-radius: 50%;
-    width: 35px;
-    height: 35px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
 }
 
-.search-button:hover {
-    background-color: #a31718;
-}
-
-/* Mobile Navigation Toggle (Secara default tersembunyi di desktop) */
+/* Navigasi Mobile (default tersembunyi) */
 .nav-toggle {
-    display: none;
+    display: none; /* Tombol hamburger disembunyikan di desktop */
     background: transparent;
     border: none;
     color: var(--text-primary);
@@ -123,115 +82,56 @@
     cursor: pointer;
 }
 
-/* Mobile Navigation Menu (Secara default tersembunyi di desktop) */
-.mobile-nav-menu {
-    display: none; /* BARIS INI KUNCI PERBAIKANNYA */
+.main-nav-mobile {
+    display: none; /* Navigasi mobile disembunyikan di desktop */
     position: fixed;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
     background-color: rgba(0, 0, 0, 0.95);
-    z-index: 1001;
+    z-index: 999;
+    padding-top: 80px;
+}
+
+.main-nav-mobile.active {
+    display: flex;
     flex-direction: column;
-    padding: 30px 20px;
-    transform: translateX(-100%);
-    transition: transform 0.3s ease-in-out;
-    overflow-y: auto;
-}
-
-.mobile-nav-menu.active {
-    transform: translateX(0);
-}
-
-.mobile-nav-header {
-    display: flex;
-    justify-content: space-between;
     align-items: center;
-    margin-bottom: 20px;
-    padding-bottom: 20px;
-    border-bottom: 2px solid var(--color-border);
 }
 
-.close-nav {
-    background: transparent;
-    border: none;
-    color: var(--text-primary);
-    font-size: 1.5rem;
-    cursor: pointer;
-}
-
-.search-container-mobile {
-    display: flex;
-    align-items: center;
-    background-color: var(--bg-card);
-    border-radius: 50px;
-    padding: 5px;
-    border: 1px solid var(--color-border);
-    width: 100%;
-    margin-bottom: 30px;
-}
-
-.search-container-mobile .search-input {
-    width: 100%;
-}
-
-.nav-links-mobile {
+.main-nav-mobile ul {
     list-style: none;
+    padding: 0;
     display: flex;
     flex-direction: column;
-    gap: 15px;
+    gap: 20px;
+    width: 80%;
+    text-align: center;
 }
 
-.nav-links-mobile .nav-link-mobile {
-    text-decoration: none;
-    color: var(--text-primary);
+.main-nav-mobile .nav-link {
+    font-size: 1.5rem;
     font-weight: 700;
-    font-size: 1.2rem;
+    color: var(--text-primary);
+    text-decoration: none;
+    text-transform: uppercase;
     padding: 10px 0;
     border-bottom: 1px solid var(--color-border);
-    display: block;
-    text-transform: uppercase;
 }
 
-.nav-links-mobile .nav-link-mobile:last-child {
-    border-bottom: none;
-}
-
-.social-icons-mobile {
-    margin-top: 40px;
-    display: flex;
-    gap: 20px;
-}
-
-.social-icons-mobile a {
-    color: var(--text-secondary);
-    font-size: 1.5rem;
-    transition: color 0.3s ease;
-}
-
-.social-icons-mobile a:hover {
-    color: var(--text-primary);
-}
-
-/* Media Queries untuk Header */
+/* Media Queries untuk Mobile */
 @media (max-width: 768px) {
     .header-content {
         justify-content: flex-start;
     }
 
-    /* Sembunyikan elemen desktop di perangkat mobile */
     .main-nav-desktop, .search-container {
-        display: none;
+        display: none; /* Sembunyikan elemen desktop */
     }
 
-    /* Tampilkan elemen mobile di perangkat mobile */
     .nav-toggle {
-        display: block;
-    }
-
-    .mobile-nav-menu {
-        display: flex; /* BARIS INI KUNCI PERBAIKANNYA */
+        display: block; /* Tampilkan tombol hamburger */
     }
 
     .logo {
