@@ -1,23 +1,25 @@
 document.addEventListener('DOMContentLoaded', () => {
-
-    // Mobile Navigation
+    // --- Bagian Navigasi Mobile (Dipertahankan dan Dioptimalkan) ---
     const navToggle = document.querySelector('.nav-toggle');
-    // KUNCI: Menargetkan menu mobile dengan ID
-    const mobileNav = document.getElementById('main-nav-mobile');
+    const mobileNav = document.getElementById('mobileNavMenu');
+    const closeNavButton = document.querySelector('.close-nav');
 
-    // Pastikan kedua elemen ada di halaman
-    if (navToggle && mobileNav) {
-        navToggle.addEventListener('click', () => {
-            // Mengubah status tampilan menu mobile
+    if (navToggle && mobileNav && closeNavButton) {
+        // Fungsi untuk toggle menu
+        const toggleMobileNav = () => {
             mobileNav.classList.toggle('active');
-            
-            // Mengubah atribut aria-expanded untuk aksesibilitas
             const isExpanded = navToggle.getAttribute('aria-expanded') === 'true';
             navToggle.setAttribute('aria-expanded', !isExpanded);
-        });
-    }
+        };
 
-    // Kode JavaScript Anda yang lain (data debater, pencarian, dll.) tetap di sini.
+        navToggle.addEventListener('click', toggleMobileNav);
+        closeNavButton.addEventListener('click', toggleMobileNav);
+    }
+    // Menggunakan ID yang benar dari HTML: 'mobileNavMenu'
+    // Menggunakan tombol close yang benar
+    // Menggabungkan logika untuk toggle agar lebih efisien
+
+    // --- Data Debater (Dipertahankan) ---
     const debatersData = {
         'HIROO': { country: 'INDONESIA', flag: '🇮🇩', status: 'ACTIVE', record: '1-0-0', history: ['DBA 1: HIROO vs RENJI: WIN HIROO (Mid tier)'], image: 'assets/images/hiroo.jpeg' },
         'RANZT': { country: 'INDONESIA', flag: '🇮🇩', status: 'ACTIVE', record: '1-0-0', history: ['DBA 1: RANZT vs RYUU: WIN RANZT (Mid tier)'], image: 'assets/images/ranzt.jpeg' },
@@ -50,35 +52,50 @@ document.addEventListener('DOMContentLoaded', () => {
         'IULIAN': { country: 'ROMANIA', flag: '🇷🇴', status: 'ACTIVE', record: '0-0-0', history: [], image: 'assets/images/iulian.jpeg' },
         'HOMURA KIN': { country: 'RUSSIA', flag: '🇷🇺', status: 'ACTIVE', record: '0-0-0', history: [], image: 'assets/images/homura_kin.jpeg' },
     };
-    
-    // ... Bagian kode lain ...
+
+    // --- Bagian Pencarian (Dipertahankan dan Dioptimalkan) ---
     const searchInputs = document.querySelectorAll('#searchInput, #searchInputMobile');
-    const searchButtons = document.querySelectorAll('#searchButton, #searchButtonMobile');
     const performSearch = (query) => {
         const normalizedQuery = query.trim().toUpperCase();
-        if (debatersData[normalizedQuery]) {
-            window.location.href = `debaters.html?debater=${normalizedQuery}`;
+        const foundDebater = Object.keys(debatersData).find(key => key.includes(normalizedQuery));
+
+        if (foundDebater) {
+            window.location.href = `debaters.html?debater=${encodeURIComponent(foundDebater)}`;
         } else {
-            alert(`Debater "${normalizedQuery}" not found.`);
+            alert(`Debater "${query}" not found. Please try a different name.`);
         }
     };
+
+    // Tambahkan event listener untuk kedua input dan tombol pencarian
     searchInputs.forEach(input => {
         const button = document.getElementById(input.id.replace('Input', 'Button'));
+
         if (button) {
             button.addEventListener('click', () => performSearch(input.value));
         }
+
         input.addEventListener('keydown', (e) => {
             if (e.key === 'Enter') {
                 performSearch(input.value);
             }
         });
     });
-    if (window.location.pathname.includes('debaters.html')) {
+
+    // --- Logika Halaman Debaters (Dipindahkan ke dalam fungsi terpisah) ---
+    const initializeDebatersPage = () => {
         const debaterProfileSection = document.getElementById('debaterProfileSection');
+        const debaterListSection = document.getElementById('debaterListSection');
+
         const updateProfileView = (debaterName) => {
             const debater = debatersData[debaterName.toUpperCase()];
             if (!debater) {
                 console.error('Debater not found in data:', debaterName);
+                if (debaterListSection) {
+                    debaterListSection.style.display = 'block';
+                }
+                if (debaterProfileSection) {
+                    debaterProfileSection.style.display = 'none';
+                }
                 return;
             }
             const { country, flag, status, record, history, image } = debater;
@@ -86,13 +103,16 @@ document.addEventListener('DOMContentLoaded', () => {
             document.getElementById('profileCountry').textContent = country;
             document.getElementById('profileCountryFlag').textContent = flag;
             document.getElementById('profileRecord').textContent = record;
+
             const profileStatusElement = document.getElementById('profileStatus');
             profileStatusElement.textContent = status;
             profileStatusElement.className = '';
             profileStatusElement.classList.add(status.toLowerCase());
+
             const profileImage = document.getElementById('profileImage');
             profileImage.src = image || 'assets/images/default.jpeg';
             profileImage.alt = `${debaterName} Profile Image`;
+
             const historyList = document.getElementById('matchHistory');
             historyList.innerHTML = '';
             if (history.length > 0) {
@@ -104,7 +124,7 @@ document.addEventListener('DOMContentLoaded', () => {
             } else {
                 historyList.innerHTML = '<li>No match history available.</li>';
             }
-            const debaterListSection = document.getElementById('debaterListSection');
+
             if (debaterListSection) {
                 debaterListSection.style.display = 'none';
             }
@@ -112,11 +132,13 @@ document.addEventListener('DOMContentLoaded', () => {
                 debaterProfileSection.style.display = 'block';
             }
         };
+
         const urlParams = new URLSearchParams(window.location.search);
         const debaterQuery = urlParams.get('debater');
         if (debaterQuery) {
-            updateProfileView(debaterQuery);
+            updateProfileView(decodeURIComponent(debaterQuery));
         }
+
         const mainContent = document.querySelector('.main-content');
         if (mainContent) {
             mainContent.addEventListener('click', (e) => {
@@ -129,5 +151,10 @@ document.addEventListener('DOMContentLoaded', () => {
                 }
             });
         }
+    };
+
+    // --- Inisialisasi Berdasarkan Halaman ---
+    if (window.location.pathname.includes('debaters.html')) {
+        initializeDebatersPage();
     }
 });
