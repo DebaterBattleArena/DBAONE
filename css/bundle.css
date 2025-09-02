@@ -649,3 +649,16 @@ h1, h2, h3, h4, h5, h6 {
     }
 }
 
+/*
+ * Posisi Tombol Hamburger di mobile
+ */
+@media (max-width: 992px) {
+    .main-nav-desktop, .search-container {
+        display: none;
+    }
+
+    .nav-toggle {
+        display: block; /* Tampilkan tombol hamburger di tampilan mobile */
+        margin-left: auto; /* Dorong tombol hamburger ke kanan */
+    }
+}
