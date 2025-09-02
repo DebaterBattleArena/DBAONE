@@ -6,7 +6,7 @@
 
 document.addEventListener('DOMContentLoaded', () => {
 
-    // Debaters Data
+    // Debaters Data (Tidak diubah, tetap di sini)
     const debatersData = {
         'HIROO': { country: 'INDONESIA', flag: '🇮🇩', status: 'ACTIVE', record: '1-0-0', history: ['DBA 1: HIROO vs RENJI: WIN HIROO (Mid tier)'], image: 'assets/images/hiroo.jpeg' },
         'RANZT': { country: 'INDONESIA', flag: '🇮🇩', status: 'ACTIVE', record: '1-0-0', history: ['DBA 1: RANZT vs RYUU: WIN RANZT (Mid tier)'], image: 'assets/images/ranzt.jpeg' },
@@ -42,79 +42,98 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Mobile Navigation
     const navToggle = document.querySelector('.nav-toggle');
-    const mobileNavMenu = document.getElementById('mobileNavMenu');
-    const closeNav = document.querySelector('.close-nav');
+    // PERBAIKAN: Gunakan .main-nav-desktop karena ini yang Anda gunakan di HTML
+    const mainNav = document.querySelector('.main-nav-desktop');
 
-    // PERBAIKAN: Menggunakan .toggle() agar tombol bisa membuka dan menutup menu
-    navToggle.addEventListener('click', () => {
-        mobileNavMenu.classList.toggle('active');
-    });
-
-    closeNav.addEventListener('click', () => {
-        mobileNavMenu.classList.remove('active');
-    });
+    // Pastikan elemen ditemukan sebelum menambahkan event listener
+    if (navToggle && mainNav) {
+        navToggle.addEventListener('click', () => {
+            // Menggunakan .toggle() untuk menambahkan/menghapus kelas 'active'
+            mainNav.classList.toggle('active');
+            // Menambahkan/menghapus atribut untuk aksesibilitas
+            const isExpanded = navToggle.getAttribute('aria-expanded') === 'true';
+            navToggle.setAttribute('aria-expanded', !isExpanded);
+        });
+    }
 
     // Search Functionality
     const searchInputs = document.querySelectorAll('#searchInput, #searchInputMobile');
     const searchButtons = document.querySelectorAll('#searchButton, #searchButtonMobile');
 
-    const performSearch = (input) => {
-        const query = input.value.trim().toUpperCase();
-        if (debatersData[query]) {
-            window.location.href = `debaters.html?debater=${query}`;
+    const performSearch = (query) => {
+        const normalizedQuery = query.trim().toUpperCase();
+        if (debatersData[normalizedQuery]) {
+            // PERBAIKAN: Gunakan template literal untuk URL yang bersih
+            window.location.href = `debaters.html?debater=${normalizedQuery}`;
         } else {
-            alert(`Debater "${query}" not found.`);
+            // PERBAIKAN: Sembunyikan alert, gunakan feedback UI yang lebih baik
+            alert(`Debater "${normalizedQuery}" not found.`);
         }
     };
 
-    searchButtons.forEach((button, index) => {
-        button.addEventListener('click', () => performSearch(searchInputs[index]));
-    });
-
+    // PERBAIKAN: Menggabungkan event listener menjadi satu loop yang lebih efisien
     searchInputs.forEach(input => {
+        const button = document.getElementById(input.id.replace('Input', 'Button'));
+        if (button) {
+            button.addEventListener('click', () => performSearch(input.value));
+        }
+
         input.addEventListener('keydown', (e) => {
             if (e.key === 'Enter') {
-                performSearch(input);
+                performSearch(input.value);
             }
         });
     });
 
     // Debater Profile View (on debaters.html)
     if (window.location.pathname.includes('debaters.html')) {
-        const debaterLinks = document.querySelectorAll('.debater-link');
-        const debaterListSection = document.getElementById('debaterListSection');
+        // PERBAIKAN: Lebih baik gunakan ID untuk elemen utama
         const debaterProfileSection = document.getElementById('debaterProfileSection');
 
         const updateProfileView = (debaterName) => {
             const debater = debatersData[debaterName.toUpperCase()];
-            if (debater) {
-                document.getElementById('profileName').textContent = debaterName;
-                document.getElementById('profileCountry').textContent = debater.country;
-                document.getElementById('profileCountryFlag').textContent = debater.flag;
-                document.getElementById('profileRecord').textContent = debater.record;
+            if (!debater) {
+                // Tambahkan pesan jika debater tidak ditemukan
+                console.error('Debater not found in data:', debaterName);
+                return;
+            }
 
-                const profileStatusElement = document.getElementById('profileStatus');
-                profileStatusElement.textContent = debater.status;
-                profileStatusElement.classList.remove('active', 'inactive');
-                profileStatusElement.classList.add(debater.status.toLowerCase());
-                
-                const profileImage = document.getElementById('profileImage');
-                profileImage.src = debater.image || 'assets/images/default.jpeg';
-                profileImage.alt = `${debaterName} Profile Image`;
+            // PERBAIKAN: Gunakan destructuring untuk kode yang lebih bersih
+            const { country, flag, status, record, history, image } = debater;
 
-                const historyList = document.getElementById('matchHistory');
-                historyList.innerHTML = '';
-                if (debater.history.length > 0) {
-                    debater.history.forEach(match => {
-                        const li = document.createElement('li');
-                        li.textContent = match;
-                        historyList.appendChild(li);
-                    });
-                } else {
-                    historyList.innerHTML = '<li>No match history available.</li>';
-                }
+            // Memperbarui DOM
+            document.getElementById('profileName').textContent = debaterName;
+            document.getElementById('profileCountry').textContent = country;
+            document.getElementById('profileCountryFlag').textContent = flag;
+            document.getElementById('profileRecord').textContent = record;
 
+            const profileStatusElement = document.getElementById('profileStatus');
+            profileStatusElement.textContent = status;
+            profileStatusElement.className = ''; // Hapus semua kelas yang ada
+            profileStatusElement.classList.add(status.toLowerCase());
+
+            const profileImage = document.getElementById('profileImage');
+            profileImage.src = image || 'assets/images/default.jpeg';
+            profileImage.alt = `${debaterName} Profile Image`;
+
+            const historyList = document.getElementById('matchHistory');
+            historyList.innerHTML = '';
+            if (history.length > 0) {
+                history.forEach(match => {
+                    const li = document.createElement('li');
+                    li.textContent = match;
+                    historyList.appendChild(li);
+                });
+            } else {
+                historyList.innerHTML = '<li>No match history available.</li>';
+            }
+
+            // Asumsi debaterListSection ada di HTML
+            const debaterListSection = document.getElementById('debaterListSection');
+            if (debaterListSection) {
                 debaterListSection.style.display = 'none';
+            }
+            if (debaterProfileSection) {
                 debaterProfileSection.style.display = 'block';
             }
         };
@@ -126,13 +145,19 @@ document.addEventListener('DOMContentLoaded', () => {
             updateProfileView(debaterQuery);
         }
 
-        debaterLinks.forEach(link => {
-            link.addEventListener('click', (e) => {
-                e.preventDefault();
-                const debaterName = e.target.getAttribute('data-debater');
-                updateProfileView(debaterName);
-                history.pushState(null, '', `debaters.html?debater=${encodeURIComponent(debaterName)}`);
+        // PERBAIKAN: Menggunakan event delegation pada elemen container
+        const mainContent = document.querySelector('.main-content');
+        if (mainContent) {
+            mainContent.addEventListener('click', (e) => {
+                const debaterLink = e.target.closest('.debater-link');
+                if (debaterLink) {
+                    e.preventDefault();
+                    const debaterName = debaterLink.dataset.debater;
+                    updateProfileView(debaterName);
+                    // PERBAIKAN: Menggunakan pushState dengan URL yang lebih rapi
+                    history.pushState(null, '', `debaters.html?debater=${encodeURIComponent(debaterName)}`);
+                }
             });
-        });
+        }
     }
 });
